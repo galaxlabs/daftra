@@ -1,0 +1,86 @@
+{
+  "doctype": "DocType",
+  "name": "Purchase Invoice Item",
+  "module": "Daftra Purchases",
+  "custom": 0,
+  "is_submittable": 0,
+  "is_child_table": true,
+  "istable": 0,
+  "track_changes": true,
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "actions": [],
+  "fields": [
+    {
+      "fieldname": "product",
+      "fieldtype": "Link",
+      "label": "Product",
+      "reqd": false,
+      "idx": 1,
+      "insert_after": null,
+      "options": "Product"
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Text",
+      "label": "Description",
+      "reqd": false,
+      "idx": 2,
+      "insert_after": "product"
+    },
+    {
+      "fieldname": "qty",
+      "fieldtype": "Float",
+      "label": "Qty",
+      "reqd": true,
+      "idx": 3,
+      "insert_after": "description"
+    },
+    {
+      "fieldname": "rate",
+      "fieldtype": "Currency",
+      "label": "Rate",
+      "reqd": true,
+      "idx": 4,
+      "insert_after": "qty"
+    },
+    {
+      "fieldname": "amount",
+      "fieldtype": "Currency",
+      "label": "Amount",
+      "reqd": false,
+      "idx": 5,
+      "insert_after": "rate"
+    },
+    {
+      "fieldname": "vat_rate",
+      "fieldtype": "Percent",
+      "label": "VAT Rate",
+      "reqd": false,
+      "idx": 6,
+      "insert_after": "amount"
+    },
+    {
+      "fieldname": "vat_amount",
+      "fieldtype": "Currency",
+      "label": "VAT Amount",
+      "reqd": false,
+      "idx": 7,
+      "insert_after": "vat_rate"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_seen": 1,
+  "title_field": "product",
+  "quick_entry": false
+}

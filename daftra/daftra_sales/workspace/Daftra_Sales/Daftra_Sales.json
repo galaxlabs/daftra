@@ -1,0 +1,10 @@
+{
+  "doctype": "Workspace",
+  "name": "Daftra Sales",
+  "module": "Daftra Sales",
+  "app_name": "daftra",
+  "label": "Daftra Sales",
+  "icon": "receipt",
+  "is_hidden": 0,
+  "sequence_id": 0
+}

@@ -1,0 +1,97 @@
+{
+  "doctype": "DocType",
+  "name": "Tax Setting",
+  "module": "Daftra Tax",
+  "custom": 0,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "istable": 0,
+  "track_changes": true,
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "actions": [],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "idx": 0,
+      "options": "TAX-.YYYY.-",
+      "reqd": true,
+      "insert_after": null
+    },
+    {
+      "fieldname": "tax_name",
+      "fieldtype": "Data",
+      "label": "Tax Name",
+      "reqd": true,
+      "idx": 1,
+      "insert_after": null
+    },
+    {
+      "fieldname": "tax_rate",
+      "fieldtype": "Percent",
+      "label": "Tax Rate",
+      "reqd": true,
+      "idx": 2,
+      "insert_after": "tax_name"
+    },
+    {
+      "fieldname": "tax_type",
+      "fieldtype": "Select",
+      "label": "Tax Type",
+      "reqd": false,
+      "idx": 3,
+      "insert_after": "tax_rate",
+      "options": "VAT\nSales Tax\nWithholding Tax\nCustoms Duty\nOther"
+    },
+    {
+      "fieldname": "is_default",
+      "fieldtype": "Check",
+      "label": "Default",
+      "reqd": false,
+      "idx": 4,
+      "insert_after": "tax_type"
+    },
+    {
+      "fieldname": "is_zatca_compliant",
+      "fieldtype": "Check",
+      "label": "ZATCA Compliant",
+      "reqd": false,
+      "idx": 5,
+      "insert_after": "is_default"
+    },
+    {
+      "fieldname": "account",
+      "fieldtype": "Link",
+      "label": "Account",
+      "reqd": false,
+      "idx": 6,
+      "insert_after": "is_zatca_compliant",
+      "options": "Account"
+    },
+    {
+      "fieldname": "is_active",
+      "fieldtype": "Check",
+      "label": "Active",
+      "reqd": false,
+      "idx": 7,
+      "insert_after": "account",
+      "default": 1
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_seen": 1,
+  "title_field": "tax_name",
+  "quick_entry": false
+}

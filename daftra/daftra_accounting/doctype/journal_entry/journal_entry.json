@@ -1,0 +1,87 @@
+{
+  "doctype": "DocType",
+  "name": "Journal Entry",
+  "module": "Daftra Accounting",
+  "custom": 0,
+  "is_submittable": 1,
+  "is_child_table": 0,
+  "istable": 0,
+  "track_changes": true,
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "actions": [],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "idx": 0,
+      "options": "JOU-.YYYY.-",
+      "reqd": true,
+      "insert_after": null
+    },
+    {
+      "fieldname": "posting_date",
+      "fieldtype": "Date",
+      "label": "Posting Date",
+      "reqd": true,
+      "idx": 1,
+      "insert_after": null
+    },
+    {
+      "fieldname": "entry_type",
+      "fieldtype": "Select",
+      "label": "Type",
+      "reqd": false,
+      "idx": 2,
+      "insert_after": "posting_date",
+      "options": "Journal Entry\nContra\nPayment\nReceipt\nOpening"
+    },
+    {
+      "fieldname": "reference",
+      "fieldtype": "Data",
+      "label": "Reference",
+      "reqd": false,
+      "idx": 3,
+      "insert_after": "entry_type"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Text",
+      "label": "Notes",
+      "reqd": false,
+      "idx": 4,
+      "insert_after": "reference"
+    },
+    {
+      "fieldname": "total_debit",
+      "fieldtype": "Currency",
+      "label": "Total Debit",
+      "reqd": false,
+      "idx": 5,
+      "insert_after": "notes"
+    },
+    {
+      "fieldname": "total_credit",
+      "fieldtype": "Currency",
+      "label": "Total Credit",
+      "reqd": false,
+      "idx": 6,
+      "insert_after": "total_debit"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_seen": 1,
+  "title_field": "posting_date",
+  "quick_entry": false
+}

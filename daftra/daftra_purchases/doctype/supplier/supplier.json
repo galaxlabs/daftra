@@ -1,0 +1,113 @@
+{
+  "doctype": "DocType",
+  "name": "Supplier",
+  "module": "Daftra Purchases",
+  "custom": 0,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "istable": 0,
+  "track_changes": true,
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "actions": [],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "idx": 0,
+      "options": "SUP-.YYYY.-",
+      "reqd": true,
+      "insert_after": null
+    },
+    {
+      "fieldname": "supplier_name",
+      "fieldtype": "Data",
+      "label": "Supplier Name",
+      "reqd": true,
+      "idx": 1,
+      "insert_after": null
+    },
+    {
+      "fieldname": "supplier_type",
+      "fieldtype": "Select",
+      "label": "Type",
+      "reqd": false,
+      "idx": 2,
+      "insert_after": "supplier_name",
+      "options": "Individual\nCompany"
+    },
+    {
+      "fieldname": "phone",
+      "fieldtype": "Data",
+      "label": "Phone",
+      "reqd": false,
+      "idx": 3,
+      "insert_after": "supplier_type"
+    },
+    {
+      "fieldname": "email",
+      "fieldtype": "Data",
+      "label": "Email",
+      "reqd": false,
+      "idx": 4,
+      "insert_after": "phone"
+    },
+    {
+      "fieldname": "address",
+      "fieldtype": "Text",
+      "label": "Address",
+      "reqd": false,
+      "idx": 5,
+      "insert_after": "email"
+    },
+    {
+      "fieldname": "tax_id",
+      "fieldtype": "Data",
+      "label": "Tax ID",
+      "reqd": false,
+      "idx": 6,
+      "insert_after": "address"
+    },
+    {
+      "fieldname": "cr_number",
+      "fieldtype": "Data",
+      "label": "CR Number",
+      "reqd": false,
+      "idx": 7,
+      "insert_after": "tax_id"
+    },
+    {
+      "fieldname": "payment_terms",
+      "fieldtype": "Select",
+      "label": "Payment Terms",
+      "reqd": false,
+      "idx": 8,
+      "insert_after": "cr_number",
+      "options": "Cash\n7 Days\n15 Days\n30 Days\n45 Days\n60 Days"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "reqd": false,
+      "idx": 9,
+      "insert_after": "payment_terms",
+      "options": "Active\nInactive\nBlocked"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_seen": 1,
+  "title_field": "supplier_name",
+  "quick_entry": false
+}

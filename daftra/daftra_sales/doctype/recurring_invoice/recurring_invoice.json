@@ -1,0 +1,97 @@
+{
+  "doctype": "DocType",
+  "name": "Recurring Invoice",
+  "module": "Daftra Sales",
+  "custom": 0,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "istable": 0,
+  "track_changes": true,
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "actions": [],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "idx": 0,
+      "options": "REC-.YYYY.-",
+      "reqd": true,
+      "insert_after": null
+    },
+    {
+      "fieldname": "client",
+      "fieldtype": "Link",
+      "label": "Client",
+      "reqd": true,
+      "idx": 1,
+      "insert_after": null,
+      "options": "Client"
+    },
+    {
+      "fieldname": "frequency",
+      "fieldtype": "Select",
+      "label": "Frequency",
+      "reqd": true,
+      "idx": 2,
+      "insert_after": "client",
+      "options": "Daily\nWeekly\nMonthly\nQuarterly\nYearly"
+    },
+    {
+      "fieldname": "start_date",
+      "fieldtype": "Date",
+      "label": "Start Date",
+      "reqd": true,
+      "idx": 3,
+      "insert_after": "frequency"
+    },
+    {
+      "fieldname": "end_date",
+      "fieldtype": "Date",
+      "label": "End Date",
+      "reqd": false,
+      "idx": 4,
+      "insert_after": "start_date"
+    },
+    {
+      "fieldname": "next_invoice_date",
+      "fieldtype": "Date",
+      "label": "Next Invoice Date",
+      "reqd": false,
+      "idx": 5,
+      "insert_after": "end_date"
+    },
+    {
+      "fieldname": "total_amount",
+      "fieldtype": "Currency",
+      "label": "Amount",
+      "reqd": false,
+      "idx": 6,
+      "insert_after": "next_invoice_date"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "reqd": false,
+      "idx": 7,
+      "insert_after": "total_amount",
+      "options": "Active\nPaused\nCompleted\nCancelled"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_seen": 1,
+  "title_field": "client",
+  "quick_entry": false
+}

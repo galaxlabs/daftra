@@ -1,0 +1,89 @@
+{
+  "doctype": "DocType",
+  "name": "Employee Attendance",
+  "module": "Daftra HR",
+  "custom": 0,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "istable": 0,
+  "track_changes": true,
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "actions": [],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "idx": 0,
+      "options": "EMP-.YYYY.-",
+      "reqd": true,
+      "insert_after": null
+    },
+    {
+      "fieldname": "employee",
+      "fieldtype": "Link",
+      "label": "Employee",
+      "reqd": true,
+      "idx": 1,
+      "insert_after": null,
+      "options": "Employee"
+    },
+    {
+      "fieldname": "attendance_date",
+      "fieldtype": "Date",
+      "label": "Date",
+      "reqd": true,
+      "idx": 2,
+      "insert_after": "employee"
+    },
+    {
+      "fieldname": "check_in",
+      "fieldtype": "Time",
+      "label": "Check In",
+      "reqd": false,
+      "idx": 3,
+      "insert_after": "attendance_date"
+    },
+    {
+      "fieldname": "check_out",
+      "fieldtype": "Time",
+      "label": "Check Out",
+      "reqd": false,
+      "idx": 4,
+      "insert_after": "check_in"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "reqd": false,
+      "idx": 5,
+      "insert_after": "check_out",
+      "options": "Present\nAbsent\nLate\nHalf Day\nHoliday"
+    },
+    {
+      "fieldname": "shift",
+      "fieldtype": "Link",
+      "label": "Shift",
+      "reqd": false,
+      "idx": 6,
+      "insert_after": "status",
+      "options": "Shift"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_seen": 1,
+  "title_field": "employee",
+  "quick_entry": false
+}

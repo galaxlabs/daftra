@@ -1,0 +1,195 @@
+{
+  "doctype": "DocType",
+  "name": "Daftra Settings",
+  "module": "Daftra Settings",
+  "custom": 0,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "istable": 0,
+  "track_changes": true,
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "actions": [],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "idx": 0,
+      "options": "DAF-.YYYY.-",
+      "reqd": true,
+      "insert_after": null
+    },
+    {
+      "fieldname": "enable_sales_module",
+      "fieldtype": "Check",
+      "label": "Enable Sales Module",
+      "reqd": false,
+      "idx": 1,
+      "insert_after": null,
+      "default": 1
+    },
+    {
+      "fieldname": "enable_clients_module",
+      "fieldtype": "Check",
+      "label": "Enable Clients Module",
+      "reqd": false,
+      "idx": 2,
+      "insert_after": "enable_sales_module",
+      "default": 1
+    },
+    {
+      "fieldname": "enable_inventory_module",
+      "fieldtype": "Check",
+      "label": "Enable Inventory Module",
+      "reqd": false,
+      "idx": 3,
+      "insert_after": "enable_clients_module",
+      "default": 1
+    },
+    {
+      "fieldname": "enable_purchases_module",
+      "fieldtype": "Check",
+      "label": "Enable Purchases Module",
+      "reqd": false,
+      "idx": 4,
+      "insert_after": "enable_inventory_module",
+      "default": 1
+    },
+    {
+      "fieldname": "enable_accounting_module",
+      "fieldtype": "Check",
+      "label": "Enable Accounting Module",
+      "reqd": false,
+      "idx": 5,
+      "insert_after": "enable_purchases_module",
+      "default": 1
+    },
+    {
+      "fieldname": "enable_hr_module",
+      "fieldtype": "Check",
+      "label": "Enable HR Module",
+      "reqd": false,
+      "idx": 6,
+      "insert_after": "enable_accounting_module",
+      "default": 1
+    },
+    {
+      "fieldname": "enable_pos_module",
+      "fieldtype": "Check",
+      "label": "Enable POS Module",
+      "reqd": false,
+      "idx": 7,
+      "insert_after": "enable_hr_module",
+      "default": 1
+    },
+    {
+      "fieldname": "enable_bookings_module",
+      "fieldtype": "Check",
+      "label": "Enable Bookings Module",
+      "reqd": false,
+      "idx": 8,
+      "insert_after": "enable_pos_module",
+      "default": 1
+    },
+    {
+      "fieldname": "enable_time_tracking_module",
+      "fieldtype": "Check",
+      "label": "Enable Time Tracking Module",
+      "reqd": false,
+      "idx": 9,
+      "insert_after": "enable_bookings_module",
+      "default": 1
+    },
+    {
+      "fieldname": "enable_tax_module",
+      "fieldtype": "Check",
+      "label": "Enable Tax Module",
+      "reqd": false,
+      "idx": 10,
+      "insert_after": "enable_time_tracking_module",
+      "default": 1
+    },
+    {
+      "fieldname": "default_currency",
+      "fieldtype": "Select",
+      "label": "Default Currency",
+      "reqd": false,
+      "idx": 11,
+      "insert_after": "enable_tax_module",
+      "options": "PKR\nSAR\nAED\nUSD\nEUR\nGBP"
+    },
+    {
+      "fieldname": "company_name",
+      "fieldtype": "Data",
+      "label": "Company Name",
+      "reqd": false,
+      "idx": 12,
+      "insert_after": "default_currency"
+    },
+    {
+      "fieldname": "company_logo",
+      "fieldtype": "Attach",
+      "label": "Company Logo",
+      "reqd": false,
+      "idx": 13,
+      "insert_after": "company_name"
+    },
+    {
+      "fieldname": "vat_number",
+      "fieldtype": "Data",
+      "label": "VAT Number",
+      "reqd": false,
+      "idx": 14,
+      "insert_after": "company_logo"
+    },
+    {
+      "fieldname": "cr_number",
+      "fieldtype": "Data",
+      "label": "CR Number",
+      "reqd": false,
+      "idx": 15,
+      "insert_after": "vat_number"
+    },
+    {
+      "fieldname": "enable_zatca",
+      "fieldtype": "Check",
+      "label": "Enable ZATCA Compliance",
+      "reqd": false,
+      "idx": 16,
+      "insert_after": "cr_number"
+    },
+    {
+      "fieldname": "default_sales_tax",
+      "fieldtype": "Link",
+      "label": "Default Sales Tax",
+      "reqd": false,
+      "idx": 17,
+      "insert_after": "enable_zatca",
+      "options": "Tax Setting"
+    },
+    {
+      "fieldname": "default_purchase_tax",
+      "fieldtype": "Link",
+      "label": "Default Purchase Tax",
+      "reqd": false,
+      "idx": 18,
+      "insert_after": "default_sales_tax",
+      "options": "Tax Setting"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_seen": 1,
+  "title_field": "enable_sales_module",
+  "quick_entry": false
+}

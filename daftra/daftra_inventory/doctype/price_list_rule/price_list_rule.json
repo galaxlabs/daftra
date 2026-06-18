@@ -1,0 +1,80 @@
+{
+  "doctype": "DocType",
+  "name": "Price List Rule",
+  "module": "Daftra Inventory",
+  "custom": 0,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "istable": 0,
+  "track_changes": true,
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "actions": [],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "idx": 0,
+      "options": "PRI-.YYYY.-",
+      "reqd": true,
+      "insert_after": null
+    },
+    {
+      "fieldname": "product",
+      "fieldtype": "Link",
+      "label": "Product",
+      "reqd": false,
+      "idx": 1,
+      "insert_after": null,
+      "options": "Product"
+    },
+    {
+      "fieldname": "price_list",
+      "fieldtype": "Link",
+      "label": "Price List",
+      "reqd": false,
+      "idx": 2,
+      "insert_after": "product",
+      "options": "Price List"
+    },
+    {
+      "fieldname": "rate",
+      "fieldtype": "Currency",
+      "label": "Rate",
+      "reqd": true,
+      "idx": 3,
+      "insert_after": "price_list"
+    },
+    {
+      "fieldname": "min_qty",
+      "fieldtype": "Float",
+      "label": "Min Qty",
+      "reqd": false,
+      "idx": 4,
+      "insert_after": "rate"
+    },
+    {
+      "fieldname": "max_qty",
+      "fieldtype": "Float",
+      "label": "Max Qty",
+      "reqd": false,
+      "idx": 5,
+      "insert_after": "min_qty"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_seen": 1,
+  "title_field": "product",
+  "quick_entry": false
+}

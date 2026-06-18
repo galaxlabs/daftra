@@ -1,0 +1,10 @@
+{
+  "doctype": "Workspace",
+  "name": "Daftra Accounting",
+  "module": "Daftra Accounting",
+  "app_name": "daftra",
+  "label": "Daftra Accounting",
+  "icon": "credit-card",
+  "is_hidden": 0,
+  "sequence_id": 0
+}

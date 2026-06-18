@@ -1,0 +1,88 @@
+{
+  "doctype": "DocType",
+  "name": "Income",
+  "module": "Daftra Accounting",
+  "custom": 0,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "istable": 0,
+  "track_changes": true,
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "actions": [],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "idx": 0,
+      "options": "INC-.YYYY.-",
+      "reqd": true,
+      "insert_after": null
+    },
+    {
+      "fieldname": "income_date",
+      "fieldtype": "Date",
+      "label": "Date",
+      "reqd": true,
+      "idx": 1,
+      "insert_after": null
+    },
+    {
+      "fieldname": "income_type",
+      "fieldtype": "Link",
+      "label": "Income Type",
+      "reqd": false,
+      "idx": 2,
+      "insert_after": "income_date",
+      "options": "Account"
+    },
+    {
+      "fieldname": "amount",
+      "fieldtype": "Currency",
+      "label": "Amount",
+      "reqd": true,
+      "idx": 3,
+      "insert_after": "income_type"
+    },
+    {
+      "fieldname": "deposited_to",
+      "fieldtype": "Link",
+      "label": "Deposited To",
+      "reqd": false,
+      "idx": 4,
+      "insert_after": "amount",
+      "options": "Treasury"
+    },
+    {
+      "fieldname": "reference",
+      "fieldtype": "Data",
+      "label": "Reference",
+      "reqd": false,
+      "idx": 5,
+      "insert_after": "deposited_to"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Text",
+      "label": "Notes",
+      "reqd": false,
+      "idx": 6,
+      "insert_after": "reference"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_seen": 1,
+  "title_field": "income_date",
+  "quick_entry": false
+}

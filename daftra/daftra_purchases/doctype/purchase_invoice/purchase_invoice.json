@@ -1,0 +1,113 @@
+{
+  "doctype": "DocType",
+  "name": "Purchase Invoice",
+  "module": "Daftra Purchases",
+  "custom": 0,
+  "is_submittable": 1,
+  "is_child_table": 0,
+  "istable": 0,
+  "track_changes": true,
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "actions": [],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "idx": 0,
+      "options": "PUR-.YYYY.-",
+      "reqd": true,
+      "insert_after": null
+    },
+    {
+      "fieldname": "supplier",
+      "fieldtype": "Link",
+      "label": "Supplier",
+      "reqd": true,
+      "idx": 1,
+      "insert_after": null,
+      "options": "Supplier"
+    },
+    {
+      "fieldname": "invoice_date",
+      "fieldtype": "Date",
+      "label": "Invoice Date",
+      "reqd": true,
+      "idx": 2,
+      "insert_after": "supplier"
+    },
+    {
+      "fieldname": "due_date",
+      "fieldtype": "Date",
+      "label": "Due Date",
+      "reqd": false,
+      "idx": 3,
+      "insert_after": "invoice_date"
+    },
+    {
+      "fieldname": "invoice_type",
+      "fieldtype": "Select",
+      "label": "Type",
+      "reqd": false,
+      "idx": 4,
+      "insert_after": "due_date",
+      "options": "Purchase\nDebit Note\nRefund"
+    },
+    {
+      "fieldname": "subtotal",
+      "fieldtype": "Currency",
+      "label": "Subtotal",
+      "reqd": false,
+      "idx": 5,
+      "insert_after": "invoice_type"
+    },
+    {
+      "fieldname": "tax_amount",
+      "fieldtype": "Currency",
+      "label": "Tax",
+      "reqd": false,
+      "idx": 6,
+      "insert_after": "subtotal"
+    },
+    {
+      "fieldname": "total",
+      "fieldtype": "Currency",
+      "label": "Total",
+      "reqd": false,
+      "idx": 7,
+      "insert_after": "tax_amount"
+    },
+    {
+      "fieldname": "paid_amount",
+      "fieldtype": "Currency",
+      "label": "Paid",
+      "reqd": false,
+      "idx": 8,
+      "insert_after": "total"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "reqd": false,
+      "idx": 9,
+      "insert_after": "paid_amount",
+      "options": "Draft\nSubmitted\nPaid\nOverdue\nCancelled"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_seen": 1,
+  "title_field": "supplier",
+  "quick_entry": false
+}

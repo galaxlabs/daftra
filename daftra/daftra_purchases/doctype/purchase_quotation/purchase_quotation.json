@@ -1,0 +1,72 @@
+{
+  "doctype": "DocType",
+  "name": "Purchase Quotation",
+  "module": "Daftra Purchases",
+  "custom": 0,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "istable": 0,
+  "track_changes": true,
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "actions": [],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "idx": 0,
+      "options": "PUR-.YYYY.-",
+      "reqd": true,
+      "insert_after": null
+    },
+    {
+      "fieldname": "supplier",
+      "fieldtype": "Link",
+      "label": "Supplier",
+      "reqd": false,
+      "idx": 1,
+      "insert_after": null,
+      "options": "Supplier"
+    },
+    {
+      "fieldname": "quotation_date",
+      "fieldtype": "Date",
+      "label": "Date",
+      "reqd": true,
+      "idx": 2,
+      "insert_after": "supplier"
+    },
+    {
+      "fieldname": "valid_till",
+      "fieldtype": "Date",
+      "label": "Valid Till",
+      "reqd": false,
+      "idx": 3,
+      "insert_after": "quotation_date"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "reqd": false,
+      "idx": 4,
+      "insert_after": "valid_till",
+      "options": "Draft\nSent\nAccepted\nRejected"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_seen": 1,
+  "title_field": "supplier",
+  "quick_entry": false
+}

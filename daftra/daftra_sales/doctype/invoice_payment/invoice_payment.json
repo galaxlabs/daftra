@@ -1,0 +1,80 @@
+{
+  "doctype": "DocType",
+  "name": "Invoice Payment",
+  "module": "Daftra Sales",
+  "custom": 0,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "istable": 0,
+  "track_changes": true,
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "actions": [],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "idx": 0,
+      "options": "INV-.YYYY.-",
+      "reqd": true,
+      "insert_after": null
+    },
+    {
+      "fieldname": "sales_invoice",
+      "fieldtype": "Link",
+      "label": "Invoice",
+      "reqd": true,
+      "idx": 1,
+      "insert_after": null,
+      "options": "Sales Invoice"
+    },
+    {
+      "fieldname": "payment_date",
+      "fieldtype": "Date",
+      "label": "Payment Date",
+      "reqd": true,
+      "idx": 2,
+      "insert_after": "sales_invoice"
+    },
+    {
+      "fieldname": "amount",
+      "fieldtype": "Currency",
+      "label": "Amount",
+      "reqd": true,
+      "idx": 3,
+      "insert_after": "payment_date"
+    },
+    {
+      "fieldname": "payment_method",
+      "fieldtype": "Select",
+      "label": "Method",
+      "reqd": false,
+      "idx": 4,
+      "insert_after": "amount",
+      "options": "Cash\nBank Transfer\nCard\nCheque\nOnline"
+    },
+    {
+      "fieldname": "reference",
+      "fieldtype": "Data",
+      "label": "Reference",
+      "reqd": false,
+      "idx": 5,
+      "insert_after": "payment_method"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_seen": 1,
+  "title_field": "sales_invoice",
+  "quick_entry": false
+}

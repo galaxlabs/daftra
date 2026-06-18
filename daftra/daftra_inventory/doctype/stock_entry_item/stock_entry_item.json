@@ -1,0 +1,62 @@
+{
+  "doctype": "DocType",
+  "name": "Stock Entry Item",
+  "module": "Daftra Inventory",
+  "custom": 0,
+  "is_submittable": 0,
+  "is_child_table": true,
+  "istable": 0,
+  "track_changes": true,
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "actions": [],
+  "fields": [
+    {
+      "fieldname": "product",
+      "fieldtype": "Link",
+      "label": "Product",
+      "reqd": false,
+      "idx": 1,
+      "insert_after": null,
+      "options": "Product"
+    },
+    {
+      "fieldname": "qty",
+      "fieldtype": "Float",
+      "label": "Qty",
+      "reqd": true,
+      "idx": 2,
+      "insert_after": "product"
+    },
+    {
+      "fieldname": "rate",
+      "fieldtype": "Currency",
+      "label": "Rate",
+      "reqd": false,
+      "idx": 3,
+      "insert_after": "qty"
+    },
+    {
+      "fieldname": "amount",
+      "fieldtype": "Currency",
+      "label": "Amount",
+      "reqd": false,
+      "idx": 4,
+      "insert_after": "rate"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_seen": 1,
+  "title_field": "product",
+  "quick_entry": false
+}

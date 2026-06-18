@@ -1,0 +1,128 @@
+{
+  "doctype": "DocType",
+  "name": "Time Entry",
+  "module": "Daftra Time Tracking",
+  "custom": 0,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "istable": 0,
+  "track_changes": true,
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "actions": [],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "idx": 0,
+      "options": "TIM-.YYYY.-",
+      "reqd": true,
+      "insert_after": null
+    },
+    {
+      "fieldname": "employee",
+      "fieldtype": "Link",
+      "label": "Employee",
+      "reqd": false,
+      "idx": 1,
+      "insert_after": null,
+      "options": "Employee"
+    },
+    {
+      "fieldname": "client",
+      "fieldtype": "Link",
+      "label": "Client",
+      "reqd": false,
+      "idx": 2,
+      "insert_after": "employee",
+      "options": "Client"
+    },
+    {
+      "fieldname": "task",
+      "fieldtype": "Data",
+      "label": "Task",
+      "reqd": false,
+      "idx": 3,
+      "insert_after": "client"
+    },
+    {
+      "fieldname": "date",
+      "fieldtype": "Date",
+      "label": "Date",
+      "reqd": true,
+      "idx": 4,
+      "insert_after": "task"
+    },
+    {
+      "fieldname": "start_time",
+      "fieldtype": "Time",
+      "label": "Start Time",
+      "reqd": false,
+      "idx": 5,
+      "insert_after": "date"
+    },
+    {
+      "fieldname": "end_time",
+      "fieldtype": "Time",
+      "label": "End Time",
+      "reqd": false,
+      "idx": 6,
+      "insert_after": "start_time"
+    },
+    {
+      "fieldname": "duration_hours",
+      "fieldtype": "Float",
+      "label": "Duration (Hours)",
+      "reqd": false,
+      "idx": 7,
+      "insert_after": "end_time"
+    },
+    {
+      "fieldname": "hourly_rate",
+      "fieldtype": "Currency",
+      "label": "Hourly Rate",
+      "reqd": false,
+      "idx": 8,
+      "insert_after": "duration_hours"
+    },
+    {
+      "fieldname": "billable_amount",
+      "fieldtype": "Currency",
+      "label": "Billable Amount",
+      "reqd": false,
+      "idx": 9,
+      "insert_after": "hourly_rate"
+    },
+    {
+      "fieldname": "is_billed",
+      "fieldtype": "Check",
+      "label": "Billed",
+      "reqd": false,
+      "idx": 10,
+      "insert_after": "billable_amount"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Text",
+      "label": "Notes",
+      "reqd": false,
+      "idx": 11,
+      "insert_after": "is_billed"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_seen": 1,
+  "title_field": "employee",
+  "quick_entry": false
+}

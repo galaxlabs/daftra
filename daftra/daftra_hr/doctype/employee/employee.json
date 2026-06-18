@@ -1,0 +1,146 @@
+{
+  "doctype": "DocType",
+  "name": "Employee",
+  "module": "Daftra HR",
+  "custom": 0,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "istable": 0,
+  "track_changes": true,
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "actions": [],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "idx": 0,
+      "options": "EMP-.YYYY.-",
+      "reqd": true,
+      "insert_after": null
+    },
+    {
+      "fieldname": "employee_name",
+      "fieldtype": "Data",
+      "label": "Employee Name",
+      "reqd": true,
+      "idx": 1,
+      "insert_after": null
+    },
+    {
+      "fieldname": "employee_id",
+      "fieldtype": "Data",
+      "label": "Employee ID",
+      "reqd": false,
+      "idx": 2,
+      "insert_after": "employee_name"
+    },
+    {
+      "fieldname": "email",
+      "fieldtype": "Data",
+      "label": "Email",
+      "reqd": false,
+      "idx": 3,
+      "insert_after": "employee_id"
+    },
+    {
+      "fieldname": "phone",
+      "fieldtype": "Data",
+      "label": "Phone",
+      "reqd": false,
+      "idx": 4,
+      "insert_after": "email"
+    },
+    {
+      "fieldname": "gender",
+      "fieldtype": "Select",
+      "label": "Gender",
+      "reqd": false,
+      "idx": 5,
+      "insert_after": "phone",
+      "options": "Male\nFemale"
+    },
+    {
+      "fieldname": "nationality",
+      "fieldtype": "Data",
+      "label": "Nationality",
+      "reqd": false,
+      "idx": 6,
+      "insert_after": "gender"
+    },
+    {
+      "fieldname": "national_id",
+      "fieldtype": "Data",
+      "label": "National ID",
+      "reqd": false,
+      "idx": 7,
+      "insert_after": "nationality"
+    },
+    {
+      "fieldname": "role",
+      "fieldtype": "Link",
+      "label": "Role",
+      "reqd": false,
+      "idx": 8,
+      "insert_after": "national_id",
+      "options": "Employee Role"
+    },
+    {
+      "fieldname": "type",
+      "fieldtype": "Select",
+      "label": "Type",
+      "reqd": false,
+      "idx": 9,
+      "insert_after": "role",
+      "options": "Full Time\nPart Time\nContractor\nIntern"
+    },
+    {
+      "fieldname": "hire_date",
+      "fieldtype": "Date",
+      "label": "Hire Date",
+      "reqd": false,
+      "idx": 10,
+      "insert_after": "type"
+    },
+    {
+      "fieldname": "basic_salary",
+      "fieldtype": "Currency",
+      "label": "Basic Salary",
+      "reqd": false,
+      "idx": 11,
+      "insert_after": "hire_date"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "reqd": false,
+      "idx": 12,
+      "insert_after": "basic_salary",
+      "options": "Active\nSuspended\nTerminated"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Text",
+      "label": "Notes",
+      "reqd": false,
+      "idx": 13,
+      "insert_after": "status"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_seen": 1,
+  "title_field": "employee_name",
+  "quick_entry": false
+}

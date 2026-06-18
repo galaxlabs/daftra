@@ -1,0 +1,10 @@
+{
+  "doctype": "Workspace",
+  "name": "Daftra Tax",
+  "module": "Daftra Tax",
+  "app_name": "daftra",
+  "label": "Daftra Tax",
+  "icon": "law",
+  "is_hidden": 0,
+  "sequence_id": 0
+}

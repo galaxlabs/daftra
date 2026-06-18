@@ -1,0 +1,80 @@
+{
+  "doctype": "DocType",
+  "name": "Appointment",
+  "module": "Daftra Clients",
+  "custom": 0,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "istable": 0,
+  "track_changes": true,
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "actions": [],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "idx": 0,
+      "options": "APP-.YYYY.-",
+      "reqd": true,
+      "insert_after": null
+    },
+    {
+      "fieldname": "client",
+      "fieldtype": "Link",
+      "label": "Client",
+      "reqd": false,
+      "idx": 1,
+      "insert_after": null,
+      "options": "Client"
+    },
+    {
+      "fieldname": "appointment_date",
+      "fieldtype": "Date",
+      "label": "Date",
+      "reqd": true,
+      "idx": 2,
+      "insert_after": "client"
+    },
+    {
+      "fieldname": "appointment_time",
+      "fieldtype": "Time",
+      "label": "Time",
+      "reqd": false,
+      "idx": 3,
+      "insert_after": "appointment_date"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "reqd": false,
+      "idx": 4,
+      "insert_after": "appointment_time",
+      "options": "Scheduled\nCompleted\nCancelled\nNo Show"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Text",
+      "label": "Notes",
+      "reqd": false,
+      "idx": 5,
+      "insert_after": "status"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_seen": 1,
+  "title_field": "client",
+  "quick_entry": false
+}

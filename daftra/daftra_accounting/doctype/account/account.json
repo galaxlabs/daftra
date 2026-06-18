@@ -1,0 +1,96 @@
+{
+  "doctype": "DocType",
+  "name": "Account",
+  "module": "Daftra Accounting",
+  "custom": 0,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "istable": 0,
+  "track_changes": true,
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "actions": [],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "idx": 0,
+      "options": "ACC-.YYYY.-",
+      "reqd": true,
+      "insert_after": null
+    },
+    {
+      "fieldname": "account_name",
+      "fieldtype": "Data",
+      "label": "Account Name",
+      "reqd": true,
+      "idx": 1,
+      "insert_after": null
+    },
+    {
+      "fieldname": "account_number",
+      "fieldtype": "Data",
+      "label": "Account Number",
+      "reqd": false,
+      "idx": 2,
+      "insert_after": "account_name"
+    },
+    {
+      "fieldname": "parent_account",
+      "fieldtype": "Link",
+      "label": "Parent Account",
+      "reqd": false,
+      "idx": 3,
+      "insert_after": "account_number",
+      "options": "Account"
+    },
+    {
+      "fieldname": "account_type",
+      "fieldtype": "Select",
+      "label": "Type",
+      "reqd": true,
+      "idx": 4,
+      "insert_after": "parent_account",
+      "options": "Asset\nLiability\nEquity\nRevenue\nExpense"
+    },
+    {
+      "fieldname": "is_group",
+      "fieldtype": "Check",
+      "label": "Is Group",
+      "reqd": false,
+      "idx": 5,
+      "insert_after": "account_type"
+    },
+    {
+      "fieldname": "balance",
+      "fieldtype": "Currency",
+      "label": "Balance",
+      "reqd": false,
+      "idx": 6,
+      "insert_after": "is_group"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Text",
+      "label": "Notes",
+      "reqd": false,
+      "idx": 7,
+      "insert_after": "balance"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_seen": 1,
+  "title_field": "account_name",
+  "quick_entry": false
+}

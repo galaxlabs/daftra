@@ -1,0 +1,96 @@
+{
+  "doctype": "DocType",
+  "name": "Expense",
+  "module": "Daftra Accounting",
+  "custom": 0,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "istable": 0,
+  "track_changes": true,
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "actions": [],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "idx": 0,
+      "options": "EXP-.YYYY.-",
+      "reqd": true,
+      "insert_after": null
+    },
+    {
+      "fieldname": "expense_date",
+      "fieldtype": "Date",
+      "label": "Date",
+      "reqd": true,
+      "idx": 1,
+      "insert_after": null
+    },
+    {
+      "fieldname": "expense_type",
+      "fieldtype": "Link",
+      "label": "Expense Type",
+      "reqd": false,
+      "idx": 2,
+      "insert_after": "expense_date",
+      "options": "Account"
+    },
+    {
+      "fieldname": "amount",
+      "fieldtype": "Currency",
+      "label": "Amount",
+      "reqd": true,
+      "idx": 3,
+      "insert_after": "expense_type"
+    },
+    {
+      "fieldname": "paid_from",
+      "fieldtype": "Link",
+      "label": "Paid From",
+      "reqd": false,
+      "idx": 4,
+      "insert_after": "amount",
+      "options": "Treasury"
+    },
+    {
+      "fieldname": "vendor",
+      "fieldtype": "Data",
+      "label": "Vendor",
+      "reqd": false,
+      "idx": 5,
+      "insert_after": "paid_from"
+    },
+    {
+      "fieldname": "reference",
+      "fieldtype": "Data",
+      "label": "Reference",
+      "reqd": false,
+      "idx": 6,
+      "insert_after": "vendor"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Text",
+      "label": "Notes",
+      "reqd": false,
+      "idx": 7,
+      "insert_after": "reference"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_seen": 1,
+  "title_field": "expense_date",
+  "quick_entry": false
+}

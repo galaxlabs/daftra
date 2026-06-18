@@ -1,0 +1,10 @@
+{
+  "doctype": "Workspace",
+  "name": "Daftra Bookings",
+  "module": "Daftra Bookings",
+  "app_name": "daftra",
+  "label": "Daftra Bookings",
+  "icon": "calendar",
+  "is_hidden": 0,
+  "sequence_id": 0
+}

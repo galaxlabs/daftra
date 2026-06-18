@@ -1,0 +1,62 @@
+{
+  "doctype": "DocType",
+  "name": "Employee Role",
+  "module": "Daftra HR",
+  "custom": 0,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "istable": 0,
+  "track_changes": true,
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "actions": [],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "idx": 0,
+      "options": "EMP-.YYYY.-",
+      "reqd": true,
+      "insert_after": null
+    },
+    {
+      "fieldname": "role_name",
+      "fieldtype": "Data",
+      "label": "Role Name",
+      "reqd": true,
+      "idx": 1,
+      "insert_after": null
+    },
+    {
+      "fieldname": "permissions",
+      "fieldtype": "Text",
+      "label": "Permissions",
+      "reqd": false,
+      "idx": 2,
+      "insert_after": "role_name"
+    },
+    {
+      "fieldname": "is_admin",
+      "fieldtype": "Check",
+      "label": "Admin Role",
+      "reqd": false,
+      "idx": 3,
+      "insert_after": "permissions"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_seen": 1,
+  "title_field": "role_name",
+  "quick_entry": false
+}

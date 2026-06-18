@@ -1,0 +1,11 @@
+Daftra Sales
+Daftra Clients
+Daftra Inventory
+Daftra Purchases
+Daftra Accounting
+Daftra HR
+Daftra POS
+Daftra Bookings
+Daftra Time Tracking
+Daftra Tax
+Daftra Settings

@@ -1,0 +1,88 @@
+{
+  "doctype": "DocType",
+  "name": "Installment Agreement",
+  "module": "Daftra Sales",
+  "custom": 0,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "istable": 0,
+  "track_changes": true,
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "actions": [],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "idx": 0,
+      "options": "INS-.YYYY.-",
+      "reqd": true,
+      "insert_after": null
+    },
+    {
+      "fieldname": "client",
+      "fieldtype": "Link",
+      "label": "Client",
+      "reqd": true,
+      "idx": 1,
+      "insert_after": null,
+      "options": "Client"
+    },
+    {
+      "fieldname": "total_amount",
+      "fieldtype": "Currency",
+      "label": "Total Amount",
+      "reqd": true,
+      "idx": 2,
+      "insert_after": "client"
+    },
+    {
+      "fieldname": "down_payment",
+      "fieldtype": "Currency",
+      "label": "Down Payment",
+      "reqd": false,
+      "idx": 3,
+      "insert_after": "total_amount"
+    },
+    {
+      "fieldname": "number_of_installments",
+      "fieldtype": "Int",
+      "label": "Number of Installments",
+      "reqd": false,
+      "idx": 4,
+      "insert_after": "down_payment"
+    },
+    {
+      "fieldname": "installment_amount",
+      "fieldtype": "Currency",
+      "label": "Installment Amount",
+      "reqd": false,
+      "idx": 5,
+      "insert_after": "number_of_installments"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "reqd": false,
+      "idx": 6,
+      "insert_after": "installment_amount",
+      "options": "Active\nCompleted\nDefaulted\nCancelled"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_seen": 1,
+  "title_field": "client",
+  "quick_entry": false
+}

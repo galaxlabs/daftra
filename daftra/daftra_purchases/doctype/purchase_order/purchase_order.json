@@ -1,0 +1,96 @@
+{
+  "doctype": "DocType",
+  "name": "Purchase Order",
+  "module": "Daftra Purchases",
+  "custom": 0,
+  "is_submittable": 1,
+  "is_child_table": 0,
+  "istable": 0,
+  "track_changes": true,
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "actions": [],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "idx": 0,
+      "options": "PUR-.YYYY.-",
+      "reqd": true,
+      "insert_after": null
+    },
+    {
+      "fieldname": "supplier",
+      "fieldtype": "Link",
+      "label": "Supplier",
+      "reqd": true,
+      "idx": 1,
+      "insert_after": null,
+      "options": "Supplier"
+    },
+    {
+      "fieldname": "order_date",
+      "fieldtype": "Date",
+      "label": "Order Date",
+      "reqd": true,
+      "idx": 2,
+      "insert_after": "supplier"
+    },
+    {
+      "fieldname": "expected_delivery",
+      "fieldtype": "Date",
+      "label": "Expected Delivery",
+      "reqd": false,
+      "idx": 3,
+      "insert_after": "order_date"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "reqd": false,
+      "idx": 4,
+      "insert_after": "expected_delivery",
+      "options": "Draft\nSubmitted\nPartially Received\nReceived\nCancelled"
+    },
+    {
+      "fieldname": "subtotal",
+      "fieldtype": "Currency",
+      "label": "Subtotal",
+      "reqd": false,
+      "idx": 5,
+      "insert_after": "status"
+    },
+    {
+      "fieldname": "tax_amount",
+      "fieldtype": "Currency",
+      "label": "Tax",
+      "reqd": false,
+      "idx": 6,
+      "insert_after": "subtotal"
+    },
+    {
+      "fieldname": "total",
+      "fieldtype": "Currency",
+      "label": "Total",
+      "reqd": false,
+      "idx": 7,
+      "insert_after": "tax_amount"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_seen": 1,
+  "title_field": "supplier",
+  "quick_entry": false
+}

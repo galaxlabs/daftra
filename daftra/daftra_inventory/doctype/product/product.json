@@ -1,0 +1,185 @@
+{
+  "doctype": "DocType",
+  "name": "Product",
+  "module": "Daftra Inventory",
+  "custom": 0,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "istable": 0,
+  "track_changes": true,
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "actions": [],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "idx": 0,
+      "options": "PRO-.YYYY.-",
+      "reqd": true,
+      "insert_after": null
+    },
+    {
+      "fieldname": "product_code",
+      "fieldtype": "Data",
+      "label": "Product Code",
+      "reqd": true,
+      "idx": 1,
+      "insert_after": null
+    },
+    {
+      "fieldname": "product_name",
+      "fieldtype": "Data",
+      "label": "Product Name",
+      "reqd": true,
+      "idx": 2,
+      "insert_after": "product_code"
+    },
+    {
+      "fieldname": "category",
+      "fieldtype": "Data",
+      "label": "Category",
+      "reqd": false,
+      "idx": 3,
+      "insert_after": "product_name"
+    },
+    {
+      "fieldname": "brand",
+      "fieldtype": "Data",
+      "label": "Brand",
+      "reqd": false,
+      "idx": 4,
+      "insert_after": "category"
+    },
+    {
+      "fieldname": "product_type",
+      "fieldtype": "Select",
+      "label": "Type",
+      "reqd": false,
+      "idx": 5,
+      "insert_after": "brand",
+      "options": "Product\nService\nDigital"
+    },
+    {
+      "fieldname": "unit_of_measure",
+      "fieldtype": "Select",
+      "label": "UOM",
+      "reqd": false,
+      "idx": 6,
+      "insert_after": "product_type",
+      "options": "PCS\nKG\nLTR\nBOX\nPKT\nM\nSQF\nHOUR\nDAY\nSVC"
+    },
+    {
+      "fieldname": "barcode",
+      "fieldtype": "Data",
+      "label": "Barcode",
+      "reqd": false,
+      "idx": 7,
+      "insert_after": "unit_of_measure"
+    },
+    {
+      "fieldname": "sku",
+      "fieldtype": "Data",
+      "label": "SKU",
+      "reqd": false,
+      "idx": 8,
+      "insert_after": "barcode"
+    },
+    {
+      "fieldname": "purchase_price",
+      "fieldtype": "Currency",
+      "label": "Purchase Price",
+      "reqd": false,
+      "idx": 9,
+      "insert_after": "sku"
+    },
+    {
+      "fieldname": "selling_price",
+      "fieldtype": "Currency",
+      "label": "Selling Price",
+      "reqd": false,
+      "idx": 10,
+      "insert_after": "purchase_price"
+    },
+    {
+      "fieldname": "wholesale_price",
+      "fieldtype": "Currency",
+      "label": "Wholesale Price",
+      "reqd": false,
+      "idx": 11,
+      "insert_after": "selling_price"
+    },
+    {
+      "fieldname": "opening_stock",
+      "fieldtype": "Float",
+      "label": "Opening Stock",
+      "reqd": false,
+      "idx": 12,
+      "insert_after": "wholesale_price"
+    },
+    {
+      "fieldname": "current_stock",
+      "fieldtype": "Float",
+      "label": "Current Stock",
+      "reqd": false,
+      "idx": 13,
+      "insert_after": "opening_stock"
+    },
+    {
+      "fieldname": "minimum_stock",
+      "fieldtype": "Float",
+      "label": "Min Stock Level",
+      "reqd": false,
+      "idx": 14,
+      "insert_after": "current_stock"
+    },
+    {
+      "fieldname": "maximum_stock",
+      "fieldtype": "Float",
+      "label": "Max Stock Level",
+      "reqd": false,
+      "idx": 15,
+      "insert_after": "minimum_stock"
+    },
+    {
+      "fieldname": "vat_rate",
+      "fieldtype": "Percent",
+      "label": "VAT Rate",
+      "reqd": false,
+      "idx": 16,
+      "insert_after": "maximum_stock"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "reqd": false,
+      "idx": 17,
+      "insert_after": "vat_rate",
+      "options": "Active\nInactive\nDiscontinued"
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Text",
+      "label": "Description",
+      "reqd": false,
+      "idx": 18,
+      "insert_after": "status"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_seen": 1,
+  "title_field": "product_code",
+  "quick_entry": false
+}

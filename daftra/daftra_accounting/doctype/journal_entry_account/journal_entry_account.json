@@ -1,0 +1,63 @@
+{
+  "doctype": "DocType",
+  "name": "Journal Entry Account",
+  "module": "Daftra Accounting",
+  "custom": 0,
+  "is_submittable": 0,
+  "is_child_table": true,
+  "istable": 0,
+  "track_changes": true,
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "actions": [],
+  "fields": [
+    {
+      "fieldname": "account",
+      "fieldtype": "Link",
+      "label": "Account",
+      "reqd": true,
+      "idx": 1,
+      "insert_after": null,
+      "options": "Account"
+    },
+    {
+      "fieldname": "debit",
+      "fieldtype": "Currency",
+      "label": "Debit",
+      "reqd": false,
+      "idx": 2,
+      "insert_after": "account"
+    },
+    {
+      "fieldname": "credit",
+      "fieldtype": "Currency",
+      "label": "Credit",
+      "reqd": false,
+      "idx": 3,
+      "insert_after": "debit"
+    },
+    {
+      "fieldname": "cost_center",
+      "fieldtype": "Link",
+      "label": "Cost Center",
+      "reqd": false,
+      "idx": 4,
+      "insert_after": "credit",
+      "options": "Cost Center"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_seen": 1,
+  "title_field": "account",
+  "quick_entry": false
+}

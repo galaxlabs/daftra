@@ -1,0 +1,10 @@
+{
+  "doctype": "Workspace",
+  "name": "Daftra Purchases",
+  "module": "Daftra Purchases",
+  "app_name": "daftra",
+  "label": "Daftra Purchases",
+  "icon": "repo-pull",
+  "is_hidden": 0,
+  "sequence_id": 0
+}

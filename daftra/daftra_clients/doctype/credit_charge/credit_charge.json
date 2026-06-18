@@ -1,0 +1,71 @@
+{
+  "doctype": "DocType",
+  "name": "Credit Charge",
+  "module": "Daftra Clients",
+  "custom": 0,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "istable": 0,
+  "track_changes": true,
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "actions": [],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "idx": 0,
+      "options": "CRE-.YYYY.-",
+      "reqd": true,
+      "insert_after": null
+    },
+    {
+      "fieldname": "client",
+      "fieldtype": "Link",
+      "label": "Client",
+      "reqd": false,
+      "idx": 1,
+      "insert_after": null,
+      "options": "Client"
+    },
+    {
+      "fieldname": "amount",
+      "fieldtype": "Currency",
+      "label": "Amount",
+      "reqd": true,
+      "idx": 2,
+      "insert_after": "client"
+    },
+    {
+      "fieldname": "credit_type",
+      "fieldtype": "Data",
+      "label": "Credit Type",
+      "reqd": false,
+      "idx": 3,
+      "insert_after": "amount"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Text",
+      "label": "Notes",
+      "reqd": false,
+      "idx": 4,
+      "insert_after": "credit_type"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_seen": 1,
+  "title_field": "client",
+  "quick_entry": false
+}

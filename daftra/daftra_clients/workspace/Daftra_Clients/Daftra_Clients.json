@@ -1,0 +1,10 @@
+{
+  "doctype": "Workspace",
+  "name": "Daftra Clients",
+  "module": "Daftra Clients",
+  "app_name": "daftra",
+  "label": "Daftra Clients",
+  "icon": "organization",
+  "is_hidden": 0,
+  "sequence_id": 0
+}
