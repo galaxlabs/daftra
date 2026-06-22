@@ -53,6 +53,66 @@
       "idx": 4,
       "insert_after": "valid_till",
       "options": "PKR\nSAR\nAED\nUSD\nEUR\nGBP"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Draft\nSent\nAccepted\nRejected\nExpired\nConverted",
+      "default": "Draft",
+      "insert_after": "currency",
+      "idx": 5
+    },
+    {
+      "fieldname": "sales_person",
+      "fieldtype": "Link",
+      "label": "Sales Person",
+      "options": "User",
+      "insert_after": "status",
+      "idx": 6
+    },
+    {
+      "fieldname": "subtotal",
+      "fieldtype": "Currency",
+      "label": "Subtotal",
+      "insert_after": "sales_person",
+      "idx": 7
+    },
+    {
+      "fieldname": "discount_amount",
+      "fieldtype": "Currency",
+      "label": "Discount",
+      "insert_after": "subtotal",
+      "idx": 8
+    },
+    {
+      "fieldname": "tax_amount",
+      "fieldtype": "Currency",
+      "label": "Tax Amount",
+      "insert_after": "discount_amount",
+      "idx": 9
+    },
+    {
+      "fieldname": "total",
+      "fieldtype": "Currency",
+      "label": "Total",
+      "insert_after": "tax_amount",
+      "idx": 10
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Text",
+      "label": "Notes",
+      "insert_after": "total",
+      "idx": 11
+    },
+    {
+      "fieldname": "items",
+      "fieldtype": "Table",
+      "label": "Items",
+      "options": "Sales Quotation Item",
+      "insert_after": "notes",
+      "idx": 12
     }
   ],
   "permissions": [

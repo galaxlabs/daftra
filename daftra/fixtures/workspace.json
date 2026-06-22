@@ -1,0 +1,442 @@
+[
+  {
+    "doctype": "Workspace",
+    "name": "Daftra Sales",
+    "title": "Daftra Sales",
+    "module": "Daftra Sales",
+    "public": 1,
+    "is_hidden": 0,
+    "content": "[{\"id\": \"daftra-sales-header\", \"type\": \"header\", \"data\": {\"text\": \"Daftra Sales\"}}, {\"id\": \"daftra-sales-shortcuts\", \"type\": \"shortcut\", \"data\": {\"shortcuts\": [{\"type\": \"shortcut\", \"label\": \"Sales Invoice\", \"link_to\": \"Sales Invoice\", \"link_type\": \"DocType\", \"color\": \"Blue\"}, {\"type\": \"shortcut\", \"label\": \"Sales Quotation\", \"link_to\": \"Sales Quotation\", \"link_type\": \"DocType\", \"color\": \"Blue\"}, {\"type\": \"shortcut\", \"label\": \"Invoice Payment\", \"link_to\": \"Invoice Payment\", \"link_type\": \"DocType\", \"color\": \"Blue\"}, {\"type\": \"shortcut\", \"label\": \"Recurring Invoice\", \"link_to\": \"Recurring Invoice\", \"link_type\": \"DocType\", \"color\": \"Blue\"}, {\"type\": \"shortcut\", \"label\": \"Installment Agreement\", \"link_to\": \"Installment Agreement\", \"link_type\": \"DocType\", \"color\": \"Blue\"}, {\"type\": \"shortcut\", \"label\": \"Sales Commission\", \"link_to\": \"Sales Commission\", \"link_type\": \"DocType\", \"color\": \"Blue\"}]}}]",
+    "shortcuts": [
+      {
+        "type": "DocType",
+        "label": "Sales Invoice",
+        "link_to": "Sales Invoice",
+        "doc_view": "List",
+        "color": "Blue"
+      },
+      {
+        "type": "DocType",
+        "label": "Sales Quotation",
+        "link_to": "Sales Quotation",
+        "doc_view": "List",
+        "color": "Blue"
+      },
+      {
+        "type": "DocType",
+        "label": "Invoice Payment",
+        "link_to": "Invoice Payment",
+        "doc_view": "List",
+        "color": "Blue"
+      },
+      {
+        "type": "DocType",
+        "label": "Recurring Invoice",
+        "link_to": "Recurring Invoice",
+        "doc_view": "List",
+        "color": "Blue"
+      },
+      {
+        "type": "DocType",
+        "label": "Installment Agreement",
+        "link_to": "Installment Agreement",
+        "doc_view": "List",
+        "color": "Blue"
+      },
+      {
+        "type": "DocType",
+        "label": "Sales Commission",
+        "link_to": "Sales Commission",
+        "doc_view": "List",
+        "color": "Blue"
+      }
+    ],
+    "label": "Daftra Sales"
+  },
+  {
+    "doctype": "Workspace",
+    "name": "Daftra Clients",
+    "title": "Daftra Clients",
+    "module": "Daftra Clients",
+    "public": 1,
+    "is_hidden": 0,
+    "content": "[{\"id\": \"daftra-clients-header\", \"type\": \"header\", \"data\": {\"text\": \"Daftra Clients\"}}, {\"id\": \"daftra-clients-shortcuts\", \"type\": \"shortcut\", \"data\": {\"shortcuts\": [{\"type\": \"shortcut\", \"label\": \"Client\", \"link_to\": \"Client\", \"link_type\": \"DocType\", \"color\": \"Blue\"}, {\"type\": \"shortcut\", \"label\": \"Client Contact\", \"link_to\": \"Client Contact\", \"link_type\": \"DocType\", \"color\": \"Blue\"}, {\"type\": \"shortcut\", \"label\": \"Appointment\", \"link_to\": \"Appointment\", \"link_type\": \"DocType\", \"color\": \"Blue\"}, {\"type\": \"shortcut\", \"label\": \"CRM Deal\", \"link_to\": \"CRM Deal\", \"link_type\": \"DocType\", \"color\": \"Blue\"}, {\"type\": \"shortcut\", \"label\": \"Credit Charge\", \"link_to\": \"Credit Charge\", \"link_type\": \"DocType\", \"color\": \"Blue\"}, {\"type\": \"shortcut\", \"label\": \"Credit Usage\", \"link_to\": \"Credit Usage\", \"link_type\": \"DocType\", \"color\": \"Blue\"}, {\"type\": \"shortcut\", \"label\": \"Insurance Agent\", \"link_to\": \"Insurance Agent\", \"link_type\": \"DocType\", \"color\": \"Blue\"}]}}]",
+    "shortcuts": [
+      {
+        "type": "DocType",
+        "label": "Client",
+        "link_to": "Client",
+        "doc_view": "List",
+        "color": "Blue"
+      },
+      {
+        "type": "DocType",
+        "label": "Client Contact",
+        "link_to": "Client Contact",
+        "doc_view": "List",
+        "color": "Blue"
+      },
+      {
+        "type": "DocType",
+        "label": "Appointment",
+        "link_to": "Appointment",
+        "doc_view": "List",
+        "color": "Blue"
+      },
+      {
+        "type": "DocType",
+        "label": "CRM Deal",
+        "link_to": "CRM Deal",
+        "doc_view": "List",
+        "color": "Blue"
+      },
+      {
+        "type": "DocType",
+        "label": "Credit Charge",
+        "link_to": "Credit Charge",
+        "doc_view": "List",
+        "color": "Blue"
+      },
+      {
+        "type": "DocType",
+        "label": "Credit Usage",
+        "link_to": "Credit Usage",
+        "doc_view": "List",
+        "color": "Blue"
+      },
+      {
+        "type": "DocType",
+        "label": "Insurance Agent",
+        "link_to": "Insurance Agent",
+        "doc_view": "List",
+        "color": "Blue"
+      }
+    ],
+    "label": "Daftra Clients"
+  },
+  {
+    "doctype": "Workspace",
+    "name": "Daftra Inventory",
+    "title": "Daftra Inventory",
+    "module": "Daftra Inventory",
+    "public": 1,
+    "is_hidden": 0,
+    "content": "[{\"id\": \"daftra-inventory-header\", \"type\": \"header\", \"data\": {\"text\": \"Daftra Inventory\"}}, {\"id\": \"daftra-inventory-shortcuts\", \"type\": \"shortcut\", \"data\": {\"shortcuts\": [{\"type\": \"shortcut\", \"label\": \"Product\", \"link_to\": \"Product\", \"link_type\": \"DocType\", \"color\": \"Blue\"}, {\"type\": \"shortcut\", \"label\": \"Warehouse\", \"link_to\": \"Warehouse\", \"link_type\": \"DocType\", \"color\": \"Blue\"}, {\"type\": \"shortcut\", \"label\": \"Stock Entry\", \"link_to\": \"Stock Entry\", \"link_type\": \"DocType\", \"color\": \"Blue\"}, {\"type\": \"shortcut\", \"label\": \"Stocktaking\", \"link_to\": \"Stocktaking\", \"link_type\": \"DocType\", \"color\": \"Blue\"}, {\"type\": \"shortcut\", \"label\": \"Price List\", \"link_to\": \"Price List\", \"link_type\": \"DocType\", \"color\": \"Blue\"}, {\"type\": \"shortcut\", \"label\": \"Price List Rule\", \"link_to\": \"Price List Rule\", \"link_type\": \"DocType\", \"color\": \"Blue\"}]}}]",
+    "shortcuts": [
+      {
+        "type": "DocType",
+        "label": "Product",
+        "link_to": "Product",
+        "doc_view": "List",
+        "color": "Blue"
+      },
+      {
+        "type": "DocType",
+        "label": "Warehouse",
+        "link_to": "Warehouse",
+        "doc_view": "List",
+        "color": "Blue"
+      },
+      {
+        "type": "DocType",
+        "label": "Stock Entry",
+        "link_to": "Stock Entry",
+        "doc_view": "List",
+        "color": "Blue"
+      },
+      {
+        "type": "DocType",
+        "label": "Stocktaking",
+        "link_to": "Stocktaking",
+        "doc_view": "List",
+        "color": "Blue"
+      },
+      {
+        "type": "DocType",
+        "label": "Price List",
+        "link_to": "Price List",
+        "doc_view": "List",
+        "color": "Blue"
+      },
+      {
+        "type": "DocType",
+        "label": "Price List Rule",
+        "link_to": "Price List Rule",
+        "doc_view": "List",
+        "color": "Blue"
+      }
+    ],
+    "label": "Daftra Inventory"
+  },
+  {
+    "doctype": "Workspace",
+    "name": "Daftra Purchases",
+    "title": "Daftra Purchases",
+    "module": "Daftra Purchases",
+    "public": 1,
+    "is_hidden": 0,
+    "content": "[{\"id\": \"daftra-purchases-header\", \"type\": \"header\", \"data\": {\"text\": \"Daftra Purchases\"}}, {\"id\": \"daftra-purchases-shortcuts\", \"type\": \"shortcut\", \"data\": {\"shortcuts\": [{\"type\": \"shortcut\", \"label\": \"Supplier\", \"link_to\": \"Supplier\", \"link_type\": \"DocType\", \"color\": \"Blue\"}, {\"type\": \"shortcut\", \"label\": \"Purchase Request\", \"link_to\": \"Purchase Request\", \"link_type\": \"DocType\", \"color\": \"Blue\"}, {\"type\": \"shortcut\", \"label\": \"Purchase Quotation\", \"link_to\": \"Purchase Quotation\", \"link_type\": \"DocType\", \"color\": \"Blue\"}, {\"type\": \"shortcut\", \"label\": \"Purchase Order\", \"link_to\": \"Purchase Order\", \"link_type\": \"DocType\", \"color\": \"Blue\"}, {\"type\": \"shortcut\", \"label\": \"Purchase Invoice\", \"link_to\": \"Purchase Invoice\", \"link_type\": \"DocType\", \"color\": \"Blue\"}, {\"type\": \"shortcut\", \"label\": \"Supplier Payment\", \"link_to\": \"Supplier Payment\", \"link_type\": \"DocType\", \"color\": \"Blue\"}]}}]",
+    "shortcuts": [
+      {
+        "type": "DocType",
+        "label": "Supplier",
+        "link_to": "Supplier",
+        "doc_view": "List",
+        "color": "Blue"
+      },
+      {
+        "type": "DocType",
+        "label": "Purchase Request",
+        "link_to": "Purchase Request",
+        "doc_view": "List",
+        "color": "Blue"
+      },
+      {
+        "type": "DocType",
+        "label": "Purchase Quotation",
+        "link_to": "Purchase Quotation",
+        "doc_view": "List",
+        "color": "Blue"
+      },
+      {
+        "type": "DocType",
+        "label": "Purchase Order",
+        "link_to": "Purchase Order",
+        "doc_view": "List",
+        "color": "Blue"
+      },
+      {
+        "type": "DocType",
+        "label": "Purchase Invoice",
+        "link_to": "Purchase Invoice",
+        "doc_view": "List",
+        "color": "Blue"
+      },
+      {
+        "type": "DocType",
+        "label": "Supplier Payment",
+        "link_to": "Supplier Payment",
+        "doc_view": "List",
+        "color": "Blue"
+      }
+    ],
+    "label": "Daftra Purchases"
+  },
+  {
+    "doctype": "Workspace",
+    "name": "Daftra Accounting",
+    "title": "Daftra Accounting",
+    "module": "Daftra Accounting",
+    "public": 1,
+    "is_hidden": 0,
+    "content": "[{\"id\": \"daftra-accounting-header\", \"type\": \"header\", \"data\": {\"text\": \"Daftra Accounting\"}}, {\"id\": \"daftra-accounting-shortcuts\", \"type\": \"shortcut\", \"data\": {\"shortcuts\": [{\"type\": \"shortcut\", \"label\": \"Account\", \"link_to\": \"Account\", \"link_type\": \"DocType\", \"color\": \"Blue\"}, {\"type\": \"shortcut\", \"label\": \"Cost Center\", \"link_to\": \"Cost Center\", \"link_type\": \"DocType\", \"color\": \"Blue\"}, {\"type\": \"shortcut\", \"label\": \"Journal Entry\", \"link_to\": \"Journal Entry\", \"link_type\": \"DocType\", \"color\": \"Blue\"}, {\"type\": \"shortcut\", \"label\": \"Expense\", \"link_to\": \"Expense\", \"link_type\": \"DocType\", \"color\": \"Blue\"}, {\"type\": \"shortcut\", \"label\": \"Income\", \"link_to\": \"Income\", \"link_type\": \"DocType\", \"color\": \"Blue\"}, {\"type\": \"shortcut\", \"label\": \"Treasury\", \"link_to\": \"Treasury\", \"link_type\": \"DocType\", \"color\": \"Blue\"}, {\"type\": \"shortcut\", \"label\": \"Asset\", \"link_to\": \"Asset\", \"link_type\": \"DocType\", \"color\": \"Blue\"}]}}]",
+    "shortcuts": [
+      {
+        "type": "DocType",
+        "label": "Account",
+        "link_to": "Account",
+        "doc_view": "List",
+        "color": "Blue"
+      },
+      {
+        "type": "DocType",
+        "label": "Cost Center",
+        "link_to": "Cost Center",
+        "doc_view": "List",
+        "color": "Blue"
+      },
+      {
+        "type": "DocType",
+        "label": "Journal Entry",
+        "link_to": "Journal Entry",
+        "doc_view": "List",
+        "color": "Blue"
+      },
+      {
+        "type": "DocType",
+        "label": "Expense",
+        "link_to": "Expense",
+        "doc_view": "List",
+        "color": "Blue"
+      },
+      {
+        "type": "DocType",
+        "label": "Income",
+        "link_to": "Income",
+        "doc_view": "List",
+        "color": "Blue"
+      },
+      {
+        "type": "DocType",
+        "label": "Treasury",
+        "link_to": "Treasury",
+        "doc_view": "List",
+        "color": "Blue"
+      },
+      {
+        "type": "DocType",
+        "label": "Asset",
+        "link_to": "Asset",
+        "doc_view": "List",
+        "color": "Blue"
+      }
+    ],
+    "label": "Daftra Accounting"
+  },
+  {
+    "doctype": "Workspace",
+    "name": "Daftra HR",
+    "title": "Daftra HR",
+    "module": "Daftra HR",
+    "public": 1,
+    "is_hidden": 0,
+    "content": "[{\"id\": \"daftra-hr-header\", \"type\": \"header\", \"data\": {\"text\": \"Daftra HR\"}}, {\"id\": \"daftra-hr-shortcuts\", \"type\": \"shortcut\", \"data\": {\"shortcuts\": [{\"type\": \"shortcut\", \"label\": \"Employee\", \"link_to\": \"Employee\", \"link_type\": \"DocType\", \"color\": \"Blue\"}, {\"type\": \"shortcut\", \"label\": \"Employee Role\", \"link_to\": \"Employee Role\", \"link_type\": \"DocType\", \"color\": \"Blue\"}, {\"type\": \"shortcut\", \"label\": \"Shift\", \"link_to\": \"Shift\", \"link_type\": \"DocType\", \"color\": \"Blue\"}, {\"type\": \"shortcut\", \"label\": \"Employee Attendance\", \"link_to\": \"Employee Attendance\", \"link_type\": \"DocType\", \"color\": \"Blue\"}, {\"type\": \"shortcut\", \"label\": \"Employee Contract\", \"link_to\": \"Employee Contract\", \"link_type\": \"DocType\", \"color\": \"Blue\"}, {\"type\": \"shortcut\", \"label\": \"Payroll Entry\", \"link_to\": \"Payroll Entry\", \"link_type\": \"DocType\", \"color\": \"Blue\"}, {\"type\": \"shortcut\", \"label\": \"Leave Request\", \"link_to\": \"Leave Request\", \"link_type\": \"DocType\", \"color\": \"Blue\"}]}}]",
+    "shortcuts": [
+      {
+        "type": "DocType",
+        "label": "Employee",
+        "link_to": "Employee",
+        "doc_view": "List",
+        "color": "Blue"
+      },
+      {
+        "type": "DocType",
+        "label": "Employee Role",
+        "link_to": "Employee Role",
+        "doc_view": "List",
+        "color": "Blue"
+      },
+      {
+        "type": "DocType",
+        "label": "Shift",
+        "link_to": "Shift",
+        "doc_view": "List",
+        "color": "Blue"
+      },
+      {
+        "type": "DocType",
+        "label": "Employee Attendance",
+        "link_to": "Employee Attendance",
+        "doc_view": "List",
+        "color": "Blue"
+      },
+      {
+        "type": "DocType",
+        "label": "Employee Contract",
+        "link_to": "Employee Contract",
+        "doc_view": "List",
+        "color": "Blue"
+      },
+      {
+        "type": "DocType",
+        "label": "Payroll Entry",
+        "link_to": "Payroll Entry",
+        "doc_view": "List",
+        "color": "Blue"
+      },
+      {
+        "type": "DocType",
+        "label": "Leave Request",
+        "link_to": "Leave Request",
+        "doc_view": "List",
+        "color": "Blue"
+      }
+    ],
+    "label": "Daftra HR"
+  },
+  {
+    "doctype": "Workspace",
+    "name": "Daftra POS",
+    "title": "Daftra POS",
+    "module": "Daftra POS",
+    "public": 1,
+    "is_hidden": 0,
+    "content": "[{\"id\": \"daftra-pos-header\", \"type\": \"header\", \"data\": {\"text\": \"Daftra POS\"}}, {\"id\": \"daftra-pos-shortcuts\", \"type\": \"shortcut\", \"data\": {\"shortcuts\": [{\"type\": \"shortcut\", \"label\": \"POS Session\", \"link_to\": \"POS Session\", \"link_type\": \"DocType\", \"color\": \"Blue\"}]}}]",
+    "shortcuts": [
+      {
+        "type": "DocType",
+        "label": "POS Session",
+        "link_to": "POS Session",
+        "doc_view": "List",
+        "color": "Blue"
+      }
+    ],
+    "label": "Daftra POS"
+  },
+  {
+    "doctype": "Workspace",
+    "name": "Daftra Bookings",
+    "title": "Daftra Bookings",
+    "module": "Daftra Bookings",
+    "public": 1,
+    "is_hidden": 0,
+    "content": "[{\"id\": \"daftra-bookings-header\", \"type\": \"header\", \"data\": {\"text\": \"Daftra Bookings\"}}, {\"id\": \"daftra-bookings-shortcuts\", \"type\": \"shortcut\", \"data\": {\"shortcuts\": [{\"type\": \"shortcut\", \"label\": \"Booking\", \"link_to\": \"Booking\", \"link_type\": \"DocType\", \"color\": \"Blue\"}]}}]",
+    "shortcuts": [
+      {
+        "type": "DocType",
+        "label": "Booking",
+        "link_to": "Booking",
+        "doc_view": "List",
+        "color": "Blue"
+      }
+    ],
+    "label": "Daftra Bookings"
+  },
+  {
+    "doctype": "Workspace",
+    "name": "Daftra Time Tracking",
+    "title": "Daftra Time Tracking",
+    "module": "Daftra Time Tracking",
+    "public": 1,
+    "is_hidden": 0,
+    "content": "[{\"id\": \"daftra-time-tracking-header\", \"type\": \"header\", \"data\": {\"text\": \"Daftra Time Tracking\"}}, {\"id\": \"daftra-time-tracking-shortcuts\", \"type\": \"shortcut\", \"data\": {\"shortcuts\": [{\"type\": \"shortcut\", \"label\": \"Time Entry\", \"link_to\": \"Time Entry\", \"link_type\": \"DocType\", \"color\": \"Blue\"}]}}]",
+    "shortcuts": [
+      {
+        "type": "DocType",
+        "label": "Time Entry",
+        "link_to": "Time Entry",
+        "doc_view": "List",
+        "color": "Blue"
+      }
+    ],
+    "label": "Daftra Time Tracking"
+  },
+  {
+    "doctype": "Workspace",
+    "name": "Daftra Tax",
+    "title": "Daftra Tax",
+    "module": "Daftra Tax",
+    "public": 1,
+    "is_hidden": 0,
+    "content": "[{\"id\": \"daftra-tax-header\", \"type\": \"header\", \"data\": {\"text\": \"Daftra Tax\"}}, {\"id\": \"daftra-tax-shortcuts\", \"type\": \"shortcut\", \"data\": {\"shortcuts\": [{\"type\": \"shortcut\", \"label\": \"Tax Setting\", \"link_to\": \"Tax Setting\", \"link_type\": \"DocType\", \"color\": \"Blue\"}]}}]",
+    "shortcuts": [
+      {
+        "type": "DocType",
+        "label": "Tax Setting",
+        "link_to": "Tax Setting",
+        "doc_view": "List",
+        "color": "Blue"
+      }
+    ],
+    "label": "Daftra Tax"
+  },
+  {
+    "doctype": "Workspace",
+    "name": "Daftra Settings",
+    "title": "Daftra Settings",
+    "module": "Daftra Settings",
+    "public": 1,
+    "is_hidden": 0,
+    "content": "[{\"id\": \"daftra-settings-header\", \"type\": \"header\", \"data\": {\"text\": \"Daftra Settings\"}}, {\"id\": \"daftra-settings-shortcuts\", \"type\": \"shortcut\", \"data\": {\"shortcuts\": [{\"type\": \"shortcut\", \"label\": \"Daftra Settings\", \"link_to\": \"Daftra Settings\", \"link_type\": \"DocType\", \"color\": \"Blue\"}]}}]",
+    "shortcuts": [
+      {
+        "type": "DocType",
+        "label": "Daftra Settings",
+        "link_to": "Daftra Settings",
+        "doc_view": "List",
+        "color": "Blue"
+      }
+    ],
+    "label": "Daftra Settings"
+  }
+]

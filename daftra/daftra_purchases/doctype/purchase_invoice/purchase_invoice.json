@@ -94,6 +94,28 @@
       "idx": 9,
       "insert_after": "paid_amount",
       "options": "Draft\nSubmitted\nPaid\nOverdue\nCancelled"
+    },
+    {
+      "fieldname": "payment_terms_days",
+      "fieldtype": "Int",
+      "label": "Payment Terms (Days)",
+      "insert_after": "due_date",
+      "idx": 10
+    },
+    {
+      "fieldname": "items",
+      "fieldtype": "Table",
+      "label": "Items",
+      "options": "Purchase Invoice Item",
+      "insert_after": "status",
+      "idx": 11
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Text",
+      "label": "Notes",
+      "insert_after": "items",
+      "idx": 12
     }
   ],
   "permissions": [

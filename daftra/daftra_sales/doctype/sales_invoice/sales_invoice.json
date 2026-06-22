@@ -146,6 +146,90 @@
       "reqd": false,
       "idx": 14,
       "insert_after": "balance"
+    },
+    {
+      "fieldname": "invoice_layout",
+      "fieldtype": "Select",
+      "label": "Invoice Layout",
+      "options": "Default Invoice\nDefault Timesheet\nMaterials & Services\nReceipt\nTAX Invoice",
+      "default": "Default Invoice",
+      "insert_after": "naming_series",
+      "idx": 15
+    },
+    {
+      "fieldname": "delivery_method",
+      "fieldtype": "Select",
+      "label": "Method",
+      "options": "Send via Email\nPrint (Offline)",
+      "default": "Print (Offline)",
+      "insert_after": "invoice_layout",
+      "idx": 16
+    },
+    {
+      "fieldname": "sales_person",
+      "fieldtype": "Link",
+      "label": "Sales Person",
+      "options": "User",
+      "insert_after": "payment_method",
+      "idx": 17
+    },
+    {
+      "fieldname": "payment_terms_days",
+      "fieldtype": "Int",
+      "label": "Payment Terms (Days)",
+      "insert_after": "due_date",
+      "idx": 18
+    },
+    {
+      "fieldname": "deposit_amount",
+      "fieldtype": "Currency",
+      "label": "Deposit",
+      "insert_after": "discount_amount",
+      "idx": 19
+    },
+    {
+      "fieldname": "adjustment_amount",
+      "fieldtype": "Currency",
+      "label": "Adjustment",
+      "insert_after": "deposit_amount",
+      "idx": 20
+    },
+    {
+      "fieldname": "description_of_work",
+      "fieldtype": "Small Text",
+      "label": "Description of Work",
+      "insert_after": "notes",
+      "idx": 21
+    },
+    {
+      "fieldname": "type_of_service",
+      "fieldtype": "Select",
+      "label": "Type of Service",
+      "options": "\nDaily Visit\nContract\nExtra\nMaintenance\nConsulting",
+      "insert_after": "description_of_work",
+      "idx": 22
+    },
+    {
+      "fieldname": "work_ordered_by",
+      "fieldtype": "Data",
+      "label": "Work Ordered By",
+      "insert_after": "type_of_service",
+      "idx": 23
+    },
+    {
+      "fieldname": "attachment",
+      "fieldtype": "Attach",
+      "label": "Attach Documents",
+      "insert_after": "work_ordered_by",
+      "idx": 24
+    },
+    {
+      "fieldname": "items",
+      "fieldtype": "Table",
+      "label": "Items",
+      "options": "Sales Invoice Item",
+      "insert_after": "work_ordered_by",
+      "idx": 25
     }
   ],
   "permissions": [

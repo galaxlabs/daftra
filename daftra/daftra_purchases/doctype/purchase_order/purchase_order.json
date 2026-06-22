@@ -77,6 +77,30 @@
       "reqd": false,
       "idx": 7,
       "insert_after": "tax_amount"
+    },
+    {
+      "fieldname": "currency",
+      "fieldtype": "Select",
+      "label": "Currency",
+      "options": "PKR\nSAR\nAED\nUSD\nEUR\nGBP",
+      "default": "SAR",
+      "insert_after": "supplier",
+      "idx": 8
+    },
+    {
+      "fieldname": "items",
+      "fieldtype": "Table",
+      "label": "Items",
+      "options": "Purchase Invoice Item",
+      "insert_after": "total",
+      "idx": 9
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Text",
+      "label": "Notes",
+      "insert_after": "items",
+      "idx": 10
     }
   ],
   "permissions": [

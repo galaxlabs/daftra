@@ -53,6 +53,14 @@
       "reqd": false,
       "idx": 4,
       "insert_after": "warehouse"
+    },
+    {
+      "fieldname": "items",
+      "fieldtype": "Table",
+      "label": "Items",
+      "options": "Stock Entry Item",
+      "insert_after": "notes",
+      "idx": 5
     }
   ],
   "permissions": [

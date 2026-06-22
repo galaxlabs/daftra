@@ -11,12 +11,12 @@ source_url = "https://galaxylab2020.daftra.com"
 
 # Apps
 app_include_js = []
-app_include_css = []
+app_include_css = ["/assets/daftra/css/daftra.css"]
 web_include_js = []
-web_include_css = []
+web_include_css = ["/assets/daftra/css/daftra.css"]
 
 # Fixtures
-fixtures = ["Custom Script", "Print Format", "Workspace", "Custom Field"]
+fixtures = ["Print Format", "Workspace", "Custom Field"]
 
 # Permissions
 permissions = [
@@ -62,3 +62,12 @@ permissions = [
         ]
     },
 ]
+
+
+doctype_js = {
+    "Sales Invoice": "public/js/daftra_forms.js",
+    "Sales Quotation": "public/js/daftra_forms.js",
+    "Purchase Invoice": "public/js/daftra_forms.js",
+    "Time Entry": "public/js/daftra_forms.js",
+    "Daftra Settings": "public/js/daftra_forms.js",
+}
