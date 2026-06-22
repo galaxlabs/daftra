@@ -1,5 +1,5 @@
 import frappe
 from frappe.model.document import Document
 
-class PosSession(Document):
+class POSSession(Document):
     pass

@@ -1,89 +1,93 @@
 {
-  "doctype": "DocType",
-  "name": "CRM Deal",
-  "module": "Daftra Clients",
-  "custom": 0,
-  "is_submittable": 0,
-  "is_child_table": 0,
-  "istable": 0,
-  "track_changes": true,
-  "modified_by": "Administrator",
-  "owner": "Administrator",
-  "actions": [],
-  "fields": [
-    {
-      "fieldname": "naming_series",
-      "fieldtype": "Select",
-      "label": "Series",
-      "idx": 0,
-      "options": "CRM-.YYYY.-",
-      "reqd": true,
-      "insert_after": null
-    },
-    {
-      "fieldname": "client",
-      "fieldtype": "Link",
-      "label": "Client",
-      "reqd": false,
-      "idx": 1,
-      "insert_after": null,
-      "options": "Client"
-    },
-    {
-      "fieldname": "deal_name",
-      "fieldtype": "Data",
-      "label": "Deal Name",
-      "reqd": true,
-      "idx": 2,
-      "insert_after": "client"
-    },
-    {
-      "fieldname": "stage",
-      "fieldtype": "Select",
-      "label": "Stage",
-      "reqd": false,
-      "idx": 3,
-      "insert_after": "deal_name",
-      "options": "Lead\nQualified\nProposal\nNegotiation\nClosed Won\nClosed Lost"
-    },
-    {
-      "fieldname": "expected_value",
-      "fieldtype": "Currency",
-      "label": "Expected Value",
-      "reqd": false,
-      "idx": 4,
-      "insert_after": "stage"
-    },
-    {
-      "fieldname": "probability",
-      "fieldtype": "Percent",
-      "label": "Probability",
-      "reqd": false,
-      "idx": 5,
-      "insert_after": "expected_value"
-    },
-    {
-      "fieldname": "assigned_to",
-      "fieldtype": "Link",
-      "label": "Assigned To",
-      "reqd": false,
-      "idx": 6,
-      "insert_after": "probability",
-      "options": "User"
-    }
-  ],
-  "permissions": [
-    {
-      "role": "System Manager",
-      "read": 1,
-      "write": 1,
-      "create": 1,
-      "delete": 1
-    }
-  ],
-  "sort_field": "modified",
-  "sort_order": "DESC",
-  "track_seen": 1,
-  "title_field": "client",
-  "quick_entry": false
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-06-21 14:59:18.772617",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "client",
+  "naming_series",
+  "deal_name",
+  "stage",
+  "expected_value",
+  "probability",
+  "assigned_to"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Series",
+   "options": "CRM-.YYYY.-",
+   "reqd": 1
+  },
+  {
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "label": "Client",
+   "options": "Client"
+  },
+  {
+   "fieldname": "deal_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Deal Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "stage",
+   "fieldtype": "Select",
+   "label": "Stage",
+   "options": "Lead\nQualified\nProposal\nNegotiation\nClosed Won\nClosed Lost"
+  },
+  {
+   "fieldname": "expected_value",
+   "fieldtype": "Currency",
+   "label": "Expected Value"
+  },
+  {
+   "fieldname": "probability",
+   "fieldtype": "Percent",
+   "label": "Probability"
+  },
+  {
+   "fieldname": "assigned_to",
+   "fieldtype": "Link",
+   "label": "Assigned To",
+   "options": "User"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-06-21 14:59:18.772617",
+ "modified_by": "Administrator",
+ "module": "Daftra Clients",
+ "name": "CRM Deal",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "client",
+ "track_changes": 1,
+ "track_seen": 1
 }

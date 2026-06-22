@@ -1,96 +1,96 @@
 {
-  "doctype": "DocType",
-  "name": "POS Session",
-  "module": "Daftra POS",
-  "custom": 0,
-  "is_submittable": 0,
-  "is_child_table": 0,
-  "istable": 0,
-  "track_changes": true,
-  "modified_by": "Administrator",
-  "owner": "Administrator",
-  "actions": [],
-  "fields": [
-    {
-      "fieldname": "naming_series",
-      "fieldtype": "Select",
-      "label": "Series",
-      "idx": 0,
-      "options": "POS-.YYYY.-",
-      "reqd": true,
-      "insert_after": null
-    },
-    {
-      "fieldname": "user",
-      "fieldtype": "Link",
-      "label": "User",
-      "reqd": false,
-      "idx": 1,
-      "insert_after": null,
-      "options": "User"
-    },
-    {
-      "fieldname": "opening_time",
-      "fieldtype": "Datetime",
-      "label": "Opening Time",
-      "reqd": false,
-      "idx": 2,
-      "insert_after": "user"
-    },
-    {
-      "fieldname": "closing_time",
-      "fieldtype": "Datetime",
-      "label": "Closing Time",
-      "reqd": false,
-      "idx": 3,
-      "insert_after": "opening_time"
-    },
-    {
-      "fieldname": "opening_balance",
-      "fieldtype": "Currency",
-      "label": "Opening Balance",
-      "reqd": false,
-      "idx": 4,
-      "insert_after": "closing_time"
-    },
-    {
-      "fieldname": "closing_balance",
-      "fieldtype": "Currency",
-      "label": "Closing Balance",
-      "reqd": false,
-      "idx": 5,
-      "insert_after": "opening_balance"
-    },
-    {
-      "fieldname": "total_sales",
-      "fieldtype": "Currency",
-      "label": "Total Sales",
-      "reqd": false,
-      "idx": 6,
-      "insert_after": "closing_balance"
-    },
-    {
-      "fieldname": "status",
-      "fieldtype": "Select",
-      "label": "Status",
-      "reqd": false,
-      "idx": 7,
-      "insert_after": "total_sales",
-      "options": "Open\nClosed\nCancelled"
-    }
-  ],
-  "permissions": [
-    {
-      "role": "System Manager",
-      "read": 1,
-      "write": 1,
-      "create": 1,
-      "delete": 1
-    }
-  ],
-  "sort_field": "modified",
-  "sort_order": "DESC",
-  "track_seen": 1,
-  "title_field": "user",
-  "quick_entry": false
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-06-21 15:00:27.958236",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "user",
+  "opening_time",
+  "closing_time",
+  "opening_balance",
+  "closing_balance",
+  "total_sales",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Series",
+   "options": "POS-.YYYY.-",
+   "reqd": 1
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "User",
+   "options": "User"
+  },
+  {
+   "fieldname": "opening_time",
+   "fieldtype": "Datetime",
+   "label": "Opening Time"
+  },
+  {
+   "fieldname": "closing_time",
+   "fieldtype": "Datetime",
+   "label": "Closing Time"
+  },
+  {
+   "fieldname": "opening_balance",
+   "fieldtype": "Currency",
+   "label": "Opening Balance"
+  },
+  {
+   "fieldname": "closing_balance",
+   "fieldtype": "Currency",
+   "label": "Closing Balance"
+  },
+  {
+   "fieldname": "total_sales",
+   "fieldtype": "Currency",
+   "label": "Total Sales"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Open\nClosed\nCancelled"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-06-21 15:00:27.958236",
+ "modified_by": "Administrator",
+ "module": "Daftra POS",
+ "name": "POS Session",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "user",
+ "track_changes": 1,
+ "track_seen": 1
 }
