@@ -207,31 +207,39 @@ def create_client_record(payload=None):
     return _doc_dict(saved, ["name", "client_type", "business_name", "first_name", "phone", "mobile", "email", "city", "country", "tax_id", "credit_period"])
 
 
-@frappe.whitelist()
-def create_service_product(payload=None):
+def create_product_record(payload=None):
     payload = _payload_dict(payload)
     product = frappe.new_doc("Product")
-    product.product_code = payload.get("product_code") or f"SVC-{frappe.generate_hash(length=6).upper()}"
-    product.product_name = payload.get("product_name") or "Service Package"
-    product.category = payload.get("category") or "Services"
+    product.product_code = payload.get("product_code") or f"PRD-{frappe.generate_hash(length=6).upper()}"
+    product.product_name = payload.get("product_name") or payload.get("description") or "Product"
+    product.category = payload.get("category") or ("Services" if payload.get("product_type") == "Service" else "General")
     product.brand = payload.get("brand") or "Daftra"
-    product.product_type = "Service"
-    product.unit_of_measure = payload.get("unit_of_measure") or "SVC"
+    product.product_type = payload.get("product_type") or "Product"
+    product.unit_of_measure = payload.get("unit_of_measure") or ("SVC" if product.product_type == "Service" else "PCS")
     product.barcode = payload.get("barcode") or ""
     product.sku = payload.get("sku") or ""
-    product.purchase_price = payload.get("purchase_price") or 0
-    product.selling_price = payload.get("selling_price") or 0
-    product.wholesale_price = payload.get("wholesale_price") or payload.get("selling_price") or 0
-    product.opening_stock = 0
-    product.current_stock = 0
-    product.minimum_stock = 0
-    product.maximum_stock = 0
-    product.vat_rate = payload.get("vat_rate") or 15
+    product.purchase_price = flt(payload.get("purchase_price") or 0)
+    product.selling_price = flt(payload.get("selling_price") or 0)
+    product.wholesale_price = flt(payload.get("wholesale_price") or product.selling_price)
+    product.opening_stock = flt(payload.get("opening_stock") or 0)
+    product.current_stock = flt(payload.get("current_stock") or product.opening_stock)
+    product.minimum_stock = flt(payload.get("minimum_stock") or 0)
+    product.maximum_stock = flt(payload.get("maximum_stock") or 0)
+    product.vat_rate = flt(payload.get("vat_rate") or 15)
     product.status = payload.get("status") or "Active"
     product.description = payload.get("description") or product.product_name
     _prepare_series(product)
     saved = _save(product)
-    return _doc_dict(saved, ["name", "product_code", "product_name", "product_type", "unit_of_measure", "selling_price", "vat_rate", "current_stock", "status"])
+    return _doc_dict(saved, ["name", "product_code", "product_name", "product_type", "unit_of_measure", "selling_price", "vat_rate", "current_stock", "status", "description"])
+
+
+@frappe.whitelist()
+def create_service_product(payload=None):
+    payload = _payload_dict(payload)
+    payload["product_type"] = "Service"
+    payload.setdefault("category", "Services")
+    payload.setdefault("unit_of_measure", "SVC")
+    return create_product_record(payload)
 
 
 @frappe.whitelist()
@@ -271,18 +279,251 @@ def create_time_entry_record(payload=None):
 
 @frappe.whitelist()
 def get_frontend_boot():
-    from daftra.api.dashboard_api import get_dashboard_stats, get_document_catalog, get_enabled_modules, get_setup_state
+    from daftra.api.dashboard_api import get_dashboard_blueprint, get_dashboard_overview, get_document_catalog
+
+    overview = get_dashboard_overview()
 
     return {
-        "stats": get_dashboard_stats(),
-        "enabled_modules": get_enabled_modules(),
+        **overview,
+        "enabled_modules": overview.get("modules", {}),
         "modules": MODULE_MAP,
         "scenarios": SCENARIOS,
         "low_stock": get_low_stock(),
         "recent_activity": get_recent_activity(),
-        "setup": get_setup_state(),
         "document_catalog": get_document_catalog(),
+        "blueprint": get_dashboard_blueprint(),
     }
+
+
+WORKSPACE_CONFIG = {
+    "Client": {
+        "module": "Clients",
+        "title_field": "business_name",
+        "list_fields": ["name", "business_name", "first_name", "client_type", "phone", "email", "city", "tax_id", "modified"],
+        "detail_fields": ["name", "client_type", "business_name", "first_name", "last_name", "phone", "mobile", "email", "city", "country", "tax_id", "credit_period", "notes"],
+        "create_fields": [
+            {"fieldname": "business_name", "label": "Business Name", "type": "Data", "required": 1},
+            {"fieldname": "first_name", "label": "Primary Contact", "type": "Data"},
+            {"fieldname": "email", "label": "Email", "type": "Data"},
+            {"fieldname": "phone", "label": "Phone", "type": "Data"},
+            {"fieldname": "city", "label": "City", "type": "Data"},
+            {"fieldname": "tax_id", "label": "VAT / Tax ID", "type": "Data"},
+            {"fieldname": "credit_period", "label": "Credit Period", "type": "Int"},
+            {"fieldname": "notes", "label": "Notes", "type": "Text"},
+        ],
+    },
+    "Product": {
+        "module": "Inventory",
+        "title_field": "product_name",
+        "list_fields": ["name", "product_code", "product_name", "product_type", "category", "selling_price", "vat_rate", "status", "modified"],
+        "detail_fields": ["name", "product_code", "product_name", "product_type", "category", "brand", "unit_of_measure", "selling_price", "purchase_price", "vat_rate", "current_stock", "minimum_stock", "status", "description"],
+        "create_fields": [
+            {"fieldname": "product_code", "label": "Product Code", "type": "Data"},
+            {"fieldname": "product_name", "label": "Product Name", "type": "Data", "required": 1},
+            {"fieldname": "product_type", "label": "Type", "type": "Select", "options": ["Product", "Service", "Digital"]},
+            {"fieldname": "category", "label": "Category", "type": "Data"},
+            {"fieldname": "selling_price", "label": "Selling Price", "type": "Currency"},
+            {"fieldname": "vat_rate", "label": "VAT %", "type": "Percent"},
+            {"fieldname": "status", "label": "Status", "type": "Select", "options": ["Active", "Inactive", "Discontinued"]},
+            {"fieldname": "description", "label": "Description", "type": "Text"},
+        ],
+    },
+    "Booking": {
+        "module": "Bookings",
+        "title_field": "service",
+        "list_fields": ["name", "client", "booking_date", "booking_time", "service", "status", "modified"],
+        "detail_fields": ["name", "client", "booking_date", "booking_time", "service", "status", "notes"],
+        "create_fields": [
+            {"fieldname": "client", "label": "Client", "type": "Link", "options_key": "clients", "required": 1},
+            {"fieldname": "booking_date", "label": "Booking Date", "type": "Date", "required": 1},
+            {"fieldname": "booking_time", "label": "Booking Time", "type": "Time"},
+            {"fieldname": "service", "label": "Service", "type": "Data", "required": 1},
+            {"fieldname": "status", "label": "Status", "type": "Select", "options": ["Pending", "Confirmed", "Completed", "Cancelled", "No Show"]},
+            {"fieldname": "notes", "label": "Notes", "type": "Text"},
+        ],
+    },
+    "Time Entry": {
+        "module": "Time Tracking",
+        "title_field": "task",
+        "list_fields": ["name", "client", "task", "date", "duration_hours", "hourly_rate", "billable_amount", "modified"],
+        "detail_fields": ["name", "employee", "client", "task", "date", "start_time", "end_time", "duration_hours", "hourly_rate", "billable_amount", "notes"],
+        "create_fields": [
+            {"fieldname": "client", "label": "Client", "type": "Link", "options_key": "clients"},
+            {"fieldname": "task", "label": "Task", "type": "Data", "required": 1},
+            {"fieldname": "date", "label": "Date", "type": "Date", "required": 1},
+            {"fieldname": "duration_hours", "label": "Duration Hours", "type": "Float"},
+            {"fieldname": "hourly_rate", "label": "Hourly Rate", "type": "Currency"},
+            {"fieldname": "notes", "label": "Notes", "type": "Text"},
+        ],
+    },
+    "Sales Invoice": {
+        "module": "Sales",
+        "title_field": "name",
+        "list_fields": ["name", "client", "invoice_date", "due_date", "invoice_layout", "status", "total", "balance", "modified"],
+        "detail_fields": ["name", "client", "invoice_date", "due_date", "invoice_layout", "payment_method", "status", "subtotal", "tax_amount", "total", "balance", "description_of_work", "project_title", "project_reference", "project_scope", "contract_acknowledgement", "notes"],
+        "create_fields": [
+            {"fieldname": "client", "label": "Client", "type": "Link", "options_key": "clients", "required": 1},
+            {"fieldname": "item", "label": "Item / Service", "type": "Link", "options_key": "products", "required": 1},
+            {"fieldname": "qty", "label": "Quantity", "type": "Float", "required": 1},
+            {"fieldname": "rate", "label": "Rate", "type": "Currency", "required": 1},
+            {"fieldname": "vat_rate", "label": "VAT %", "type": "Percent"},
+            {"fieldname": "invoice_layout", "label": "Invoice Layout", "type": "Select", "options": ["Materials & Services", "Default Invoice", "TAX Invoice", "Receipt"]},
+            {"fieldname": "due_date", "label": "Due Date", "type": "Date"},
+            {"fieldname": "description_of_work", "label": "Description of Work", "type": "Text"},
+            {"fieldname": "project_title", "label": "Project Title", "type": "Data"},
+            {"fieldname": "project_reference", "label": "Project Reference", "type": "Data"},
+            {"fieldname": "project_scope", "label": "Project Scope", "type": "Text"},
+            {"fieldname": "contract_acknowledgement", "label": "Contractor Acknowledgement", "type": "Text"},
+            {"fieldname": "notes", "label": "Notes", "type": "Text"},
+        ],
+    },
+}
+
+
+def _resolve_workspace_config(doctype):
+    config = WORKSPACE_CONFIG.get(doctype)
+    if not config:
+        frappe.throw(_("Unsupported workspace doctype"))
+    return config
+
+
+def _workspace_options():
+    return {
+        "clients": frappe.get_all("Client", fields=["name", "business_name", "first_name", "last_name", "tax_id"], order_by="modified desc", limit_page_length=100),
+        "products": frappe.get_all("Product", fields=["name", "product_code", "product_name", "product_type", "selling_price", "vat_rate"], order_by="modified desc", limit_page_length=100),
+    }
+
+
+def _record_summary(doctype, row, config):
+    title_field = config.get("title_field")
+    title = row.get(title_field) or row.get("name")
+    subtitle_parts = []
+    for key in config.get("list_fields", [])[1:4]:
+        value = row.get(key)
+        if value and value != title:
+            subtitle_parts.append(str(value))
+    amount = row.get("total") or row.get("selling_price") or row.get("billable_amount")
+    return {**row, "title": title, "subtitle": " · ".join(subtitle_parts), "amount": amount}
+
+
+def create_sales_invoice_record(payload=None):
+    from daftra.api.sales_api import validate_sales_invoice_payload
+
+    payload = _payload_dict(payload)
+    item_name = payload.get("item") or payload.get("product")
+    item_doc = frappe.get_doc("Product", item_name) if item_name else None
+    rate = flt(payload.get("rate") or (item_doc.selling_price if item_doc else 0))
+    vat_rate = flt(payload.get("vat_rate") or (item_doc.vat_rate if item_doc else 15))
+    qty = flt(payload.get("qty") or 1)
+    validation = validate_sales_invoice_payload({
+        "client": payload.get("client"),
+        "invoice_layout": payload.get("invoice_layout") or "Materials & Services",
+        "description_of_work": payload.get("description_of_work") or payload.get("project_scope") or payload.get("notes"),
+        "notes": payload.get("notes"),
+        "due_date": payload.get("due_date"),
+        "items": [{"qty": qty, "rate": rate, "vat_rate": vat_rate}],
+        "discount_amount": payload.get("discount_amount") or 0,
+        "deposit_amount": payload.get("deposit_amount") or 0,
+        "adjustment_amount": payload.get("adjustment_amount") or 0,
+    })
+    if not validation.get("ok"):
+        frappe.throw("; ".join(validation.get("errors") or []))
+
+    invoice = frappe.new_doc("Sales Invoice")
+    invoice.client = payload.get("client")
+    invoice.invoice_date = payload.get("invoice_date") or nowdate()
+    invoice.due_date = payload.get("due_date") or add_days(invoice.invoice_date, 30)
+    invoice.currency = payload.get("currency") or frappe.get_single("Daftra Settings").default_currency or "SAR"
+    invoice.invoice_type = payload.get("invoice_type") or "Normal"
+    invoice.status = payload.get("status") or "Draft"
+    invoice.payment_method = payload.get("payment_method") or "Bank Transfer"
+    invoice.invoice_layout = payload.get("invoice_layout") or "Materials & Services"
+    invoice.notes = payload.get("notes") or ""
+    invoice.description_of_work = payload.get("description_of_work") or payload.get("project_scope") or (item_doc.description if item_doc else "")
+    invoice.project_title = payload.get("project_title") or ""
+    invoice.project_reference = payload.get("project_reference") or ""
+    invoice.project_scope = payload.get("project_scope") or ""
+    invoice.contract_acknowledgement = payload.get("contract_acknowledgement") or ""
+    invoice.work_ordered_by = payload.get("work_ordered_by") or ""
+    invoice.discount_amount = flt(payload.get("discount_amount") or 0)
+    invoice.deposit_amount = flt(payload.get("deposit_amount") or 0)
+    invoice.adjustment_amount = flt(payload.get("adjustment_amount") or 0)
+    _prepare_series(invoice)
+    invoice.append("items", {
+        "item": item_name,
+        "description": payload.get("item_description") or (item_doc.description if item_doc else item_name),
+        "qty": qty,
+        "rate": rate,
+        "amount": qty * rate,
+        "vat_rate": vat_rate,
+        "vat_amount": qty * rate * vat_rate / 100,
+    })
+    invoice.subtotal = validation.get("subtotal")
+    invoice.tax_amount = validation.get("tax_total")
+    invoice.total = validation.get("total")
+    invoice.balance = validation.get("total")
+    saved = _save(invoice)
+    return _doc_dict(saved, ["name", "client", "invoice_date", "due_date", "invoice_layout", "status", "total", "balance", "description_of_work"])
+
+
+@frappe.whitelist()
+def get_frontend_workspace(doctype=None, search=None, limit=20):
+    doctype = doctype or "Client"
+    config = _resolve_workspace_config(doctype)
+    limit = int(limit or 20)
+    search = (search or "").strip()
+    or_filters = []
+    if search:
+        for key in config.get("list_fields", [])[:4]:
+            if key != "modified":
+                or_filters.append([doctype, key, "like", f"%{search}%"])
+    rows = frappe.get_all(doctype, fields=config.get("list_fields"), or_filters=or_filters, order_by="modified desc", limit_page_length=limit)
+    records = [_record_summary(doctype, row, config) for row in rows]
+    return {
+        "doctype": doctype,
+        "module": config.get("module"),
+        "records": records,
+        "create_fields": config.get("create_fields"),
+        "detail_fields": config.get("detail_fields"),
+        "options": _workspace_options(),
+    }
+
+
+@frappe.whitelist()
+def get_frontend_record(doctype, name):
+    config = _resolve_workspace_config(doctype)
+    doc = frappe.get_doc(doctype, name)
+    payload = {field: getattr(doc, field, None) for field in config.get("detail_fields", [])}
+    if doctype == "Sales Invoice":
+        payload["items"] = [
+            {
+                "item": row.item,
+                "description": row.description,
+                "qty": row.qty,
+                "rate": row.rate,
+                "amount": row.amount,
+                "vat_rate": row.vat_rate,
+                "vat_amount": row.vat_amount,
+            }
+            for row in doc.items
+        ]
+    return payload
+
+
+@frappe.whitelist()
+def create_frontend_workspace_record(doctype, payload=None):
+    payload = _payload_dict(payload)
+    if doctype == "Client":
+        return create_client_record(payload)
+    if doctype == "Product":
+        return create_product_record(payload)
+    if doctype == "Booking":
+        return create_service_booking(payload)
+    if doctype == "Time Entry":
+        return create_time_entry_record(payload)
+    if doctype == "Sales Invoice":
+        return create_sales_invoice_record(payload)
+    frappe.throw(_("Unsupported workspace doctype"))
 
 
 @frappe.whitelist()

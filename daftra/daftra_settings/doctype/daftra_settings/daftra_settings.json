@@ -120,11 +120,20 @@
       "default": "Services"
     },
     {
+      "fieldname": "business_industry",
+      "fieldtype": "Select",
+      "label": "Business Industry",
+      "reqd": false,
+      "insert_after": "business_type",
+      "options": "General Services\nMaintenance & Contracting\nProfessional Services\nConsulting\nTechnology Services\nHealthcare Services\nEducation & Training\nConstruction\nTrading\nWholesale Distribution\nRetail Store\nE-Commerce\nManufacturing\nMixed Operations",
+      "idx": 13
+    },
+    {
       "fieldname": "default_language",
       "fieldtype": "Select",
       "label": "Default Language",
       "reqd": false,
-      "idx": 13,
+      "idx": 14,
       "insert_after": "business_type",
       "options": "English\nArabic",
       "default": "English"
@@ -134,7 +143,7 @@
       "fieldtype": "Check",
       "label": "Frontend Setup Completed",
       "reqd": false,
-      "idx": 14,
+      "idx": 15,
       "insert_after": "default_language",
       "default": 0
     },
@@ -143,7 +152,7 @@
       "fieldtype": "Data",
       "label": "Company Name",
       "reqd": false,
-      "idx": 15,
+      "idx": 16,
       "insert_after": "default_currency"
     },
     {
@@ -151,7 +160,7 @@
       "fieldtype": "Attach",
       "label": "Company Logo",
       "reqd": false,
-      "idx": 16,
+      "idx": 17,
       "insert_after": "company_name"
     },
     {
@@ -159,7 +168,7 @@
       "fieldtype": "Data",
       "label": "VAT Number",
       "reqd": false,
-      "idx": 17,
+      "idx": 18,
       "insert_after": "company_logo"
     },
     {
@@ -167,7 +176,7 @@
       "fieldtype": "Data",
       "label": "CR Number",
       "reqd": false,
-      "idx": 18,
+      "idx": 19,
       "insert_after": "vat_number"
     },
     {
@@ -175,7 +184,7 @@
       "fieldtype": "Check",
       "label": "Enable ZATCA Compliance",
       "reqd": false,
-      "idx": 19,
+      "idx": 20,
       "insert_after": "cr_number"
     },
     {
@@ -183,7 +192,7 @@
       "fieldtype": "Link",
       "label": "Default Sales Tax",
       "reqd": false,
-      "idx": 20,
+      "idx": 21,
       "insert_after": "enable_zatca",
       "options": "Tax Setting"
     },
@@ -192,7 +201,7 @@
       "fieldtype": "Link",
       "label": "Default Purchase Tax",
       "reqd": false,
-      "idx": 21,
+      "idx": 22,
       "insert_after": "default_sales_tax",
       "options": "Tax Setting"
     }
