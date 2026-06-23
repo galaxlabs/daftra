@@ -10,7 +10,7 @@ MODULE_MAP = {
     "Clients": ["Client", "Client Contact", "Appointment", "CRM Deal", "Credit Charge", "Credit Usage", "Insurance Agent"],
     "Inventory": ["Product", "Warehouse", "Stock Entry", "Stocktaking", "Price List", "Price List Rule"],
     "Purchases": ["Supplier", "Purchase Request", "Purchase Quotation", "Purchase Order", "Purchase Invoice", "Supplier Payment"],
-    "Accounting": ["Account", "Cost Center", "Journal Entry", "Expense", "Income", "Treasury", "Asset"],
+    "Accounting": ["Account", "Cost Center", "Journal Entry", "Expense", "Income", "Treasury", "Bank Registration", "Asset"],
     "HR": ["Employee", "Employee Role", "Shift", "Employee Attendance", "Employee Contract", "Payroll Entry", "Leave Request"],
     "POS": ["POS Session"],
     "Bookings": ["Booking"],
@@ -49,6 +49,7 @@ SERIES_FALLBACKS = {
     "Expense": "EXP-.YYYY.-",
     "Income": "INC-.YYYY.-",
     "Treasury": "TRE-.YYYY.-",
+    "Bank Registration": "BNK-.YYYY.-",
     "Asset": "AST-.YYYY.-",
 }
 
@@ -135,6 +136,22 @@ def _demo_warehouse():
         "location": "Riyadh",
         "is_default": 1,
         "status": "Active",
+    })
+
+
+def _demo_bank_registration():
+    return _first_or_create("Bank Registration", {"account_number": "4000001234567890"}, {
+        "bank_name": "Al Rajhi Bank",
+        "account_title": "Galaxy Labs Daftra",
+        "account_number": "4000001234567890",
+        "iban": "SA0380000000608010167519",
+        "swift_code": "RJHISARI",
+        "branch_name": "Riyadh Main",
+        "currency": "SAR",
+        "opening_balance": 150000,
+        "current_balance": 150000,
+        "is_default": 1,
+        "is_active": 1,
     })
 
 
@@ -318,11 +335,12 @@ def seed_demo_data():
     tax = _demo_tax()
 
     _first_or_create("Treasury", {"treasury_name": "Main Cashbox"}, {"treasury_name": "Main Cashbox", "type": "Cash", "balance": 25000, "is_active": 1})
+    bank = _demo_bank_registration()
     _first_or_create("Employee", {"employee_id": "EMP-DEMO-001"}, {"employee_name": "Aisha Demo", "employee_id": "EMP-DEMO-001", "email": "aisha@example.com", "hire_date": nowdate(), "basic_salary": 4500, "status": "Active"})
     _first_or_create("Shift", {"shift_name": "Morning"}, {"shift_name": "Morning", "start_time": "08:00:00", "end_time": "16:00:00", "late_grace_period": 15})
     _first_or_create("Price List", {"price_list_name": "Standard"}, {"price_list_name": "Standard", "currency": "SAR", "is_default": 1})
 
-    return {"client": client.name, "supplier": supplier.name, "product": product.name, "warehouse": warehouse.name, "tax": tax.name}
+    return {"client": client.name, "supplier": supplier.name, "product": product.name, "warehouse": warehouse.name, "tax": tax.name, "bank_registration": bank.name}
 
 
 @frappe.whitelist()
@@ -363,6 +381,7 @@ def run_sales_cycle():
     payment.payment_date = today
     payment.amount = invoice.total
     payment.payment_method = "Bank Transfer"
+    payment.bank_registration = _demo_bank_registration().name
     payment.reference = "DEMO-SALES-CYCLE"
     _prepare_series(payment)
     payment = _save(payment)
@@ -394,6 +413,7 @@ def run_purchase_cycle():
     payment.payment_date = today
     payment.amount = invoice.total
     payment.payment_method = "Bank Transfer"
+    payment.bank_registration = _demo_bank_registration().name
     _prepare_series(payment)
     payment = _save(payment)
 
@@ -451,6 +471,7 @@ def run_service_cycle():
     payment.payment_date = today
     payment.amount = invoice.total
     payment.payment_method = "Bank Transfer"
+    payment.bank_registration = _demo_bank_registration().name
     payment.reference = "DEMO-SERVICE-CYCLE"
     _prepare_series(payment)
     payment = _save(payment)

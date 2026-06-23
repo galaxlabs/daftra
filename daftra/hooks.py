@@ -24,14 +24,14 @@ permissions = [
         "role": "System Manager",
         "doctypes": [
             "Daftra Settings", "Tax Setting", "Account", "Cost Center",
-            "Treasury", "Employee Role", "Shift", "Daftra Project"
+            "Treasury", "Bank Registration", "Employee Role", "Shift", "Daftra Project"
         ]
     },
     {
         "role": "Accounts Manager",
         "doctypes": [
             "Sales Invoice", "Purchase Invoice", "Journal Entry",
-            "Invoice Payment", "Supplier Payment", "Expense", "Income"
+            "Invoice Payment", "Supplier Payment", "Expense", "Income", "Bank Registration"
         ]
     },
     {
@@ -75,6 +75,8 @@ doctype_js = {
     "Purchase Invoice": "public/js/daftra_forms.js",
     "Time Entry": "public/js/daftra_forms.js",
     "Daftra Settings": "public/js/daftra_forms.js",
+    "Invoice Payment": "public/js/daftra_forms.js",
+    "Supplier Payment": "public/js/daftra_forms.js",
 }
 
 

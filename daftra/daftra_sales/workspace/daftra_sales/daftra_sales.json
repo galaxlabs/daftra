@@ -1,0 +1,107 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"daftra_sales-header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Daftra Sales</span>\",\"col\":12}},{\"id\":\"daftra_sales-section-1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h3\\\">Invoices</span>\",\"col\":12}},{\"id\":\"daftra_sales-shortcut-1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Invoice\",\"col\":3}},{\"id\":\"daftra_sales-shortcut-2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Invoice Item\",\"col\":3}},{\"id\":\"daftra_sales-shortcut-3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Quotation\",\"col\":3}},{\"id\":\"daftra_sales-shortcut-4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Quotation Item\",\"col\":3}},{\"id\":\"daftra_sales-shortcut-5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Invoice Payment\",\"col\":3}},{\"id\":\"daftra_sales-section-2\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h3\\\">Automation</span>\",\"col\":12}},{\"id\":\"daftra_sales-shortcut-6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Recurring Invoice\",\"col\":3}},{\"id\":\"daftra_sales-shortcut-7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Installment Agreement\",\"col\":3}},{\"id\":\"daftra_sales-section-3\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h3\\\">Operations</span>\",\"col\":12}},{\"id\":\"daftra_sales-shortcut-8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Commission\",\"col\":3}},{\"id\":\"daftra_sales-shortcut-9\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Commission Rule\",\"col\":3}},{\"id\":\"daftra_sales-shortcut-10\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Maintenance Order\",\"col\":3}}]",
+ "creation": "2026-06-23 16:30:00.000000",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "hide_custom": 0,
+ "icon": "receipt",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "Daftra Sales",
+ "links": [],
+ "modified": "2026-06-23 16:30:00.000000",
+ "modified_by": "Administrator",
+ "module": "Daftra Sales",
+ "name": "Daftra Sales",
+ "number_cards": [],
+ "owner": "Administrator",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 0.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Sales Invoice",
+   "link_to": "Sales Invoice",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Sales Invoice Item",
+   "link_to": "Sales Invoice Item",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Sales Quotation",
+   "link_to": "Sales Quotation",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Sales Quotation Item",
+   "link_to": "Sales Quotation Item",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Invoice Payment",
+   "link_to": "Invoice Payment",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Recurring Invoice",
+   "link_to": "Recurring Invoice",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Installment Agreement",
+   "link_to": "Installment Agreement",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Sales Commission",
+   "link_to": "Sales Commission",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Commission Rule",
+   "link_to": "Commission Rule",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Maintenance Order",
+   "link_to": "Maintenance Order",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Daftra Sales"
+}

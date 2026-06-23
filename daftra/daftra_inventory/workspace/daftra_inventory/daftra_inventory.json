@@ -1,0 +1,91 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"daftra_inventory-header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Daftra Inventory</span>\",\"col\":12}},{\"id\":\"daftra_inventory-section-1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h3\\\">Catalog</span>\",\"col\":12}},{\"id\":\"daftra_inventory-shortcut-1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Product\",\"col\":3}},{\"id\":\"daftra_inventory-shortcut-2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Price List\",\"col\":3}},{\"id\":\"daftra_inventory-shortcut-3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Price List Rule\",\"col\":3}},{\"id\":\"daftra_inventory-section-2\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h3\\\">Stock</span>\",\"col\":12}},{\"id\":\"daftra_inventory-shortcut-4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Warehouse\",\"col\":3}},{\"id\":\"daftra_inventory-shortcut-5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Stock Entry\",\"col\":3}},{\"id\":\"daftra_inventory-shortcut-6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Stock Entry Item\",\"col\":3}},{\"id\":\"daftra_inventory-shortcut-7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Stocktaking\",\"col\":3}},{\"id\":\"daftra_inventory-shortcut-8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Requisition\",\"col\":3}}]",
+ "creation": "2026-06-23 16:30:00.000000",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "hide_custom": 0,
+ "icon": "package",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "Daftra Inventory",
+ "links": [],
+ "modified": "2026-06-23 16:30:00.000000",
+ "modified_by": "Administrator",
+ "module": "Daftra Inventory",
+ "name": "Daftra Inventory",
+ "number_cards": [],
+ "owner": "Administrator",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 0.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Product",
+   "link_to": "Product",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Price List",
+   "link_to": "Price List",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Price List Rule",
+   "link_to": "Price List Rule",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Warehouse",
+   "link_to": "Warehouse",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Stock Entry",
+   "link_to": "Stock Entry",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Stock Entry Item",
+   "link_to": "Stock Entry Item",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Stocktaking",
+   "link_to": "Stocktaking",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Requisition",
+   "link_to": "Requisition",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Daftra Inventory"
+}

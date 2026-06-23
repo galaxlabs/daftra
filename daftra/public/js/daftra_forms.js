@@ -7,6 +7,10 @@
     return frappe.datetime ? frappe.datetime.get_today() : new Date().toISOString().slice(0, 10);
   }
 
+  function bankBasedMethod(method) {
+    return ["Bank Transfer", "Card", "Online"].includes(method);
+  }
+
   function addDays(dateValue, days) {
     if (!days) return dateValue;
     return frappe.datetime.add_days(dateValue || today(), days);
@@ -313,9 +317,45 @@
     },
   });
 
+
+  function paymentBankToggle(frm) {
+    const needsBank = bankBasedMethod(frm.doc.payment_method);
+    frm.set_df_property("bank_registration", "reqd", needsBank ? 1 : 0);
+    frm.set_df_property("bank_registration", "hidden", needsBank ? 0 : 1);
+    frm.refresh_fields(["bank_registration", "treasury"]);
+  }
+
+  function syncPaymentBank(frm) {
+    paymentBankToggle(frm);
+    if (!frm.doc.bank_registration) return;
+    frappe.db.get_value("Bank Registration", frm.doc.bank_registration, ["linked_treasury"], (r) => {
+      if (r && r.linked_treasury) {
+        frm.set_value("treasury", r.linked_treasury);
+      }
+    });
+  }
+
   frappe.ui.form.on("Daftra Settings", {
     refresh(frm) {
       frm.add_custom_button(__("Open Daftra App"), () => window.open("/daftra", "_blank"));
     },
   });
+
+  ["Invoice Payment", "Supplier Payment"].forEach((doctype) => {
+    frappe.ui.form.on(doctype, {
+      refresh(frm) {
+        paymentBankToggle(frm);
+      },
+      payment_method(frm) {
+        if (!bankBasedMethod(frm.doc.payment_method)) {
+          frm.set_value("bank_registration", null);
+        }
+        paymentBankToggle(frm);
+      },
+      bank_registration(frm) {
+        syncPaymentBank(frm);
+      },
+    });
+  });
+
 }());

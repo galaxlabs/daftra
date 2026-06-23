@@ -1,0 +1,35 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"daftra_pos-header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Daftra POS</span>\",\"col\":12}},{\"id\":\"daftra_pos-section-1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h3\\\">Point of Sale</span>\",\"col\":12}},{\"id\":\"daftra_pos-shortcut-1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"POS Session\",\"col\":3}}]",
+ "creation": "2026-06-23 16:30:00.000000",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "hide_custom": 0,
+ "icon": "terminal",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "Daftra POS",
+ "links": [],
+ "modified": "2026-06-23 16:30:00.000000",
+ "modified_by": "Administrator",
+ "module": "Daftra POS",
+ "name": "Daftra POS",
+ "number_cards": [],
+ "owner": "Administrator",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 0.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "POS Session",
+   "link_to": "POS Session",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Daftra POS"
+}

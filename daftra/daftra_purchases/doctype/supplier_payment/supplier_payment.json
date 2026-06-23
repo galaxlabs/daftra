@@ -53,11 +53,36 @@
       "idx": 4,
       "insert_after": "amount",
       "options": "Cash\nBank Transfer\nCard\nCheque"
+    },
+    {
+      "fieldname": "bank_registration",
+      "fieldtype": "Link",
+      "label": "Bank Registration",
+      "reqd": false,
+      "idx": 5,
+      "insert_after": "payment_method",
+      "options": "Bank Registration"
+    },
+    {
+      "fieldname": "treasury",
+      "fieldtype": "Link",
+      "label": "Treasury / Wallet",
+      "reqd": false,
+      "idx": 6,
+      "insert_after": "bank_registration",
+      "options": "Treasury"
     }
   ],
   "permissions": [
     {
       "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    },
+    {
+      "role": "Accounts Manager",
       "read": 1,
       "write": 1,
       "create": 1,

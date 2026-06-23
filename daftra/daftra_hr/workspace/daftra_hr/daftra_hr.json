@@ -1,0 +1,91 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"daftra_hr-header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Daftra HR</span>\",\"col\":12}},{\"id\":\"daftra_hr-section-1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h3\\\">Employees</span>\",\"col\":12}},{\"id\":\"daftra_hr-shortcut-1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Employee\",\"col\":3}},{\"id\":\"daftra_hr-shortcut-2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Employee Role\",\"col\":3}},{\"id\":\"daftra_hr-shortcut-3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Employee Contract\",\"col\":3}},{\"id\":\"daftra_hr-section-2\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h3\\\">Attendance</span>\",\"col\":12}},{\"id\":\"daftra_hr-shortcut-4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Shift\",\"col\":3}},{\"id\":\"daftra_hr-shortcut-5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Employee Attendance\",\"col\":3}},{\"id\":\"daftra_hr-shortcut-6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Leave Request\",\"col\":3}},{\"id\":\"daftra_hr-shortcut-7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Request Type\",\"col\":3}},{\"id\":\"daftra_hr-section-3\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h3\\\">Payroll</span>\",\"col\":12}},{\"id\":\"daftra_hr-shortcut-8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payroll Entry\",\"col\":3}}]",
+ "creation": "2026-06-23 16:30:00.000000",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "hide_custom": 0,
+ "icon": "people",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "Daftra HR",
+ "links": [],
+ "modified": "2026-06-23 16:30:00.000000",
+ "modified_by": "Administrator",
+ "module": "Daftra HR",
+ "name": "Daftra HR",
+ "number_cards": [],
+ "owner": "Administrator",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 0.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Employee",
+   "link_to": "Employee",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Employee Role",
+   "link_to": "Employee Role",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Employee Contract",
+   "link_to": "Employee Contract",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Shift",
+   "link_to": "Shift",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Employee Attendance",
+   "link_to": "Employee Attendance",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Leave Request",
+   "link_to": "Leave Request",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Request Type",
+   "link_to": "Request Type",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Payroll Entry",
+   "link_to": "Payroll Entry",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Daftra HR"
+}

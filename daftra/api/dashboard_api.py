@@ -41,7 +41,7 @@ DOCUMENT_CATALOG = {
     "Clients": ["Client", "Client Contact", "Appointment", "CRM Deal", "Credit Charge", "Credit Usage", "Insurance Agent"],
     "Inventory": ["Product", "Warehouse", "Stock Entry", "Stocktaking", "Price List", "Price List Rule"],
     "Purchases": ["Supplier", "Purchase Request", "Purchase Quotation", "Purchase Order", "Purchase Invoice", "Supplier Payment"],
-    "Accounting": ["Account", "Cost Center", "Journal Entry", "Expense", "Income", "Treasury", "Asset"],
+    "Accounting": ["Account", "Cost Center", "Journal Entry", "Expense", "Income", "Treasury", "Bank Registration", "Asset"],
     "HR": ["Employee", "Employee Role", "Shift", "Employee Attendance", "Employee Contract", "Payroll Entry", "Leave Request"],
     "POS": ["POS Session"],
     "Bookings": ["Booking"],
@@ -59,6 +59,7 @@ PRINT_TEMPLATE_MATRIX = {
     "Supplier Payment": ["Receipt"],
     "Time Entry": ["Timesheet"],
     "Booking": ["Quotation"],
+    "Bank Registration": [],
 }
 
 
@@ -150,6 +151,8 @@ def get_dashboard_stats():
     if get_module_status("Accounting"):
         stats["total_expenses"] = frappe.db.sql("SELECT COALESCE(SUM(amount),0) FROM `tabExpense`")[0][0] or 0
         stats["total_incomes"] = frappe.db.sql("SELECT COALESCE(SUM(amount),0) FROM `tabIncome`")[0][0] or 0
+        stats["active_banks"] = frappe.db.count("Bank Registration", {"is_active": 1})
+        stats["active_treasuries"] = frappe.db.count("Treasury", {"is_active": 1})
 
     if get_module_status("Bookings"):
         stats["total_bookings"] = frappe.db.count("Booking")

@@ -1,0 +1,136 @@
+{
+  "doctype": "DocType",
+  "name": "Bank Registration",
+  "module": "Daftra Accounting",
+  "custom": 0,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "istable": 0,
+  "track_changes": true,
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "actions": [],
+  "autoname": "naming_series:",
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "idx": 0,
+      "options": "BNK-.YYYY.-",
+      "reqd": true
+    },
+    {
+      "fieldname": "bank_name",
+      "fieldtype": "Data",
+      "label": "Bank Name",
+      "idx": 1,
+      "reqd": true,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "account_title",
+      "fieldtype": "Data",
+      "label": "Account Title",
+      "idx": 2,
+      "reqd": true
+    },
+    {
+      "fieldname": "account_number",
+      "fieldtype": "Data",
+      "label": "Account Number",
+      "idx": 3,
+      "reqd": true,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "iban",
+      "fieldtype": "Data",
+      "label": "IBAN",
+      "idx": 4
+    },
+    {
+      "fieldname": "swift_code",
+      "fieldtype": "Data",
+      "label": "SWIFT Code",
+      "idx": 5
+    },
+    {
+      "fieldname": "branch_name",
+      "fieldtype": "Data",
+      "label": "Branch Name",
+      "idx": 6
+    },
+    {
+      "fieldname": "currency",
+      "fieldtype": "Select",
+      "label": "Currency",
+      "idx": 7,
+      "options": "SAR\nAED\nUSD\nEUR\nGBP",
+      "default": "SAR"
+    },
+    {
+      "fieldname": "opening_balance",
+      "fieldtype": "Currency",
+      "label": "Opening Balance",
+      "idx": 8,
+      "default": 0
+    },
+    {
+      "fieldname": "current_balance",
+      "fieldtype": "Currency",
+      "label": "Current Balance",
+      "idx": 9,
+      "default": 0
+    },
+    {
+      "fieldname": "linked_treasury",
+      "fieldtype": "Link",
+      "label": "Linked Treasury",
+      "idx": 10,
+      "options": "Treasury",
+      "read_only": 1
+    },
+    {
+      "fieldname": "is_default",
+      "fieldtype": "Check",
+      "label": "Default Bank",
+      "idx": 11,
+      "default": 0
+    },
+    {
+      "fieldname": "is_active",
+      "fieldtype": "Check",
+      "label": "Active",
+      "idx": 12,
+      "default": 1
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes",
+      "idx": 13
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    },
+    {
+      "role": "Accounts Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "title_field": "bank_name",
+  "track_seen": 1,
+  "quick_entry": true
+}

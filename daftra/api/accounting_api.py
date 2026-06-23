@@ -37,3 +37,27 @@ def get_balance_sheet():
             result[atype] += acc.balance or 0
     
     return result
+
+
+
+@frappe.whitelist()
+def get_bank_registrations(active_only=1):
+    filters = {}
+    if int(active_only or 0):
+        filters['is_active'] = 1
+    return frappe.get_all(
+        'Bank Registration',
+        filters=filters,
+        fields=[
+            'name',
+            'bank_name',
+            'account_title',
+            'account_number',
+            'iban',
+            'currency',
+            'current_balance',
+            'linked_treasury',
+            'is_default',
+        ],
+        order_by='is_default desc, modified desc',
+    )
