@@ -16,6 +16,13 @@ MODULE_FIELDS = {
     "Tax": "enable_tax_module",
 }
 
+
+LANGUAGE_MAP = {
+    "en": "English",
+    "ar": "Arabic",
+    "English": "English",
+    "Arabic": "Arabic",
+}
 SETUP_FIELDS = [
     "business_type",
     "default_language",
@@ -103,7 +110,10 @@ def save_frontend_setup(payload=None):
         frappe.throw(_("Unsupported business type"))
     for field in SETUP_FIELDS:
         if field in payload and payload[field] is not None:
-            setattr(settings, field, payload[field])
+            value = payload[field]
+            if field == "default_language":
+                value = LANGUAGE_MAP.get(value, value)
+            setattr(settings, field, value)
     settings.business_type = business_type
     settings.frontend_setup_completed = 1
     settings.save(ignore_permissions=True)
@@ -133,6 +143,8 @@ def get_dashboard_stats():
 
     if get_module_status("Clients"):
         stats["total_clients"] = frappe.db.count("Client")
+        stats["credit_charged"] = frappe.db.sql("SELECT COALESCE(SUM(amount),0) FROM `tabCredit Charge`")[0][0] or 0
+        stats["credit_used"] = frappe.db.sql("SELECT COALESCE(SUM(amount),0) FROM `tabCredit Usage`")[0][0] or 0
 
     if get_module_status("Inventory"):
         stats["total_products"] = frappe.db.count("Product")

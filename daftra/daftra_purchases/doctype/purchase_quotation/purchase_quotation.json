@@ -15,7 +15,7 @@
       "fieldname": "naming_series",
       "fieldtype": "Select",
       "label": "Series",
-      "idx": 0,
+      "idx": 1,
       "options": "PUR-.YYYY.-",
       "reqd": true,
       "insert_after": null
@@ -25,7 +25,7 @@
       "fieldtype": "Link",
       "label": "Supplier",
       "reqd": false,
-      "idx": 1,
+      "idx": 2,
       "insert_after": null,
       "options": "Supplier"
     },
@@ -34,7 +34,7 @@
       "fieldtype": "Date",
       "label": "Date",
       "reqd": true,
-      "idx": 2,
+      "idx": 3,
       "insert_after": "supplier"
     },
     {
@@ -42,7 +42,7 @@
       "fieldtype": "Date",
       "label": "Valid Till",
       "reqd": false,
-      "idx": 3,
+      "idx": 4,
       "insert_after": "quotation_date"
     },
     {
@@ -50,9 +50,54 @@
       "fieldtype": "Select",
       "label": "Status",
       "reqd": false,
-      "idx": 4,
+      "idx": 5,
       "insert_after": "valid_till",
       "options": "Draft\nSent\nAccepted\nRejected"
+    },
+    {
+      "fieldname": "currency",
+      "fieldtype": "Select",
+      "label": "Currency",
+      "options": "PKR\nSAR\nAED\nUSD\nEUR\nGBP",
+      "default": "SAR",
+      "insert_after": "supplier",
+      "idx": 6
+    },
+    {
+      "fieldname": "subtotal",
+      "fieldtype": "Currency",
+      "label": "Subtotal",
+      "insert_after": "status",
+      "idx": 7
+    },
+    {
+      "fieldname": "tax_amount",
+      "fieldtype": "Currency",
+      "label": "Tax",
+      "insert_after": "subtotal",
+      "idx": 8
+    },
+    {
+      "fieldname": "total",
+      "fieldtype": "Currency",
+      "label": "Total",
+      "insert_after": "tax_amount",
+      "idx": 9
+    },
+    {
+      "fieldname": "items",
+      "fieldtype": "Table",
+      "label": "Items",
+      "options": "Purchase Invoice Item",
+      "insert_after": "total",
+      "idx": 10
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Text",
+      "label": "Notes",
+      "insert_after": "items",
+      "idx": 11
     }
   ],
   "permissions": [

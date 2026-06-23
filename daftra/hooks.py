@@ -116,3 +116,10 @@ doc_events = {
         "on_update": "daftra.api.project_api.refresh_project_from_doc",
     },
 }
+
+
+scheduler_events = {
+    'daily': [
+        'daftra.api.sales_workflow_api.process_due_recurring_invoices',
+    ]
+}

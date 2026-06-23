@@ -2,6 +2,8 @@ import frappe
 from frappe import _
 from frappe.utils import add_days, flt, getdate, nowdate
 
+from daftra.api.credit_api import get_client_credit_summary
+
 
 def _client_outstanding_sql(client_name):
     return frappe.db.sql(
@@ -56,6 +58,7 @@ def get_client_profile(client_name):
         order_by='modified desc',
         limit_page_length=1,
     ) or [None])[0]
+    credit_summary = get_client_credit_summary(client_name)
     return {
         'name': client.name,
         'client_type': client.client_type,
@@ -71,6 +74,7 @@ def get_client_profile(client_name):
         'credit_period': client.credit_period,
         'outstanding': outstanding,
         'recent_invoice': recent_invoice,
+        'credit_summary': credit_summary,
     }
 
 

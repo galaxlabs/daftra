@@ -15,7 +15,7 @@
       "fieldname": "naming_series",
       "fieldtype": "Select",
       "label": "Series",
-      "idx": 0,
+      "idx": 1,
       "options": "JOU-.YYYY.-",
       "reqd": true,
       "insert_after": null
@@ -25,7 +25,7 @@
       "fieldtype": "Date",
       "label": "Posting Date",
       "reqd": true,
-      "idx": 1,
+      "idx": 2,
       "insert_after": null
     },
     {
@@ -33,7 +33,7 @@
       "fieldtype": "Select",
       "label": "Type",
       "reqd": false,
-      "idx": 2,
+      "idx": 3,
       "insert_after": "posting_date",
       "options": "Journal Entry\nContra\nPayment\nReceipt\nOpening"
     },
@@ -42,7 +42,7 @@
       "fieldtype": "Data",
       "label": "Reference",
       "reqd": false,
-      "idx": 3,
+      "idx": 4,
       "insert_after": "entry_type"
     },
     {
@@ -50,7 +50,7 @@
       "fieldtype": "Text",
       "label": "Notes",
       "reqd": false,
-      "idx": 4,
+      "idx": 5,
       "insert_after": "reference"
     },
     {
@@ -58,7 +58,7 @@
       "fieldtype": "Currency",
       "label": "Total Debit",
       "reqd": false,
-      "idx": 5,
+      "idx": 6,
       "insert_after": "notes"
     },
     {
@@ -66,7 +66,7 @@
       "fieldtype": "Currency",
       "label": "Total Credit",
       "reqd": false,
-      "idx": 6,
+      "idx": 7,
       "insert_after": "total_debit"
     },
     {
@@ -74,7 +74,7 @@
       "fieldtype": "Link",
       "label": "Project",
       "options": "Daftra Project",
-      "idx": 7,
+      "idx": 8,
       "insert_after": "notes"
     },
     {
@@ -82,8 +82,16 @@
       "fieldtype": "Link",
       "label": "Cost Center",
       "options": "Cost Center",
-      "idx": 8,
+      "idx": 9,
       "insert_after": "project"
+    },
+    {
+      "fieldname": "accounts",
+      "fieldtype": "Table",
+      "label": "Accounts",
+      "options": "Journal Entry Account",
+      "idx": 10,
+      "insert_after": "cost_center"
     }
   ],
   "permissions": [

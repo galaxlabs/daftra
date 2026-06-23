@@ -15,17 +15,25 @@
       "fieldname": "naming_series",
       "fieldtype": "Select",
       "label": "Series",
-      "idx": 0,
+      "idx": 1,
       "options": "CLI-.YYYY.-",
       "reqd": true,
       "insert_after": null
+    },
+    {
+      "fieldname": "client",
+      "fieldtype": "Link",
+      "label": "Client",
+      "options": "Client",
+      "idx": 2,
+      "insert_after": "naming_series"
     },
     {
       "fieldname": "contact_name",
       "fieldtype": "Data",
       "label": "Contact Name",
       "reqd": true,
-      "idx": 1,
+      "idx": 3,
       "insert_after": null
     },
     {
@@ -33,7 +41,7 @@
       "fieldtype": "Data",
       "label": "Phone",
       "reqd": false,
-      "idx": 2,
+      "idx": 4,
       "insert_after": "contact_name"
     },
     {
@@ -41,7 +49,7 @@
       "fieldtype": "Data",
       "label": "Email",
       "reqd": false,
-      "idx": 3,
+      "idx": 5,
       "insert_after": "phone"
     },
     {
@@ -49,7 +57,7 @@
       "fieldtype": "Data",
       "label": "Position",
       "reqd": false,
-      "idx": 4,
+      "idx": 6,
       "insert_after": "email"
     },
     {
@@ -57,7 +65,7 @@
       "fieldtype": "Check",
       "label": "Primary Contact",
       "reqd": false,
-      "idx": 5,
+      "idx": 7,
       "insert_after": "position"
     }
   ],
