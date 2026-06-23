@@ -1,0 +1,187 @@
+{
+  "doctype": "Workspace",
+  "name": "Daftra Projects",
+  "title": "Daftra Projects",
+  "module": "Daftra Projects",
+  "app_name": "daftra",
+  "label": "Daftra Projects",
+  "icon": "briefcase",
+  "is_hidden": 0,
+  "public": 1,
+  "sequence_id": 0,
+  "content": "[{\"id\": \"daftra-projects-header\", \"type\": \"header\", \"data\": {\"text\": \"Daftra Projects\"}}, {\"id\": \"daftra-projects-shortcuts\", \"type\": \"shortcut\", \"data\": {\"shortcuts\": [{\"type\": \"DocType\", \"label\": \"Daftra Project\", \"link_to\": \"Daftra Project\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Cost Center\", \"link_to\": \"Cost Center\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Sales Invoice\", \"link_to\": \"Sales Invoice\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Purchase Invoice\", \"link_to\": \"Purchase Invoice\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Expense\", \"link_to\": \"Expense\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Income\", \"link_to\": \"Income\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Journal Entry\", \"link_to\": \"Journal Entry\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Time Entry\", \"link_to\": \"Time Entry\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Booking\", \"link_to\": \"Booking\", \"doc_view\": \"List\", \"color\": \"Blue\"}]}}]",
+  "shortcuts": [
+    {
+      "type": "DocType",
+      "label": "Daftra Project",
+      "link_to": "Daftra Project",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Cost Center",
+      "link_to": "Cost Center",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Sales Invoice",
+      "link_to": "Sales Invoice",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Purchase Invoice",
+      "link_to": "Purchase Invoice",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Expense",
+      "link_to": "Expense",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Income",
+      "link_to": "Income",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Journal Entry",
+      "link_to": "Journal Entry",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Time Entry",
+      "link_to": "Time Entry",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Booking",
+      "link_to": "Booking",
+      "doc_view": "List",
+      "color": "Blue"
+    }
+  ],
+  "links": [
+    {
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Project Controls",
+      "link_count": 9,
+      "onboard": 0,
+      "type": "Card Break"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Daftra Project",
+      "link_count": 0,
+      "link_to": "Daftra Project",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Cost Center",
+      "link_count": 0,
+      "link_to": "Cost Center",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Sales Invoice",
+      "link_count": 0,
+      "link_to": "Sales Invoice",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Purchase Invoice",
+      "link_count": 0,
+      "link_to": "Purchase Invoice",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Expense",
+      "link_count": 0,
+      "link_to": "Expense",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Income",
+      "link_count": 0,
+      "link_to": "Income",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Journal Entry",
+      "link_count": 0,
+      "link_to": "Journal Entry",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Time Entry",
+      "link_count": 0,
+      "link_to": "Time Entry",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Booking",
+      "link_count": 0,
+      "link_to": "Booking",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    }
+  ]
+}

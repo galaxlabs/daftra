@@ -77,6 +77,22 @@
       "reqd": false,
       "idx": 7,
       "insert_after": "reference"
+    },
+    {
+      "fieldname": "project",
+      "fieldtype": "Link",
+      "label": "Project",
+      "options": "Daftra Project",
+      "idx": 8,
+      "insert_after": "notes"
+    },
+    {
+      "fieldname": "cost_center",
+      "fieldtype": "Link",
+      "label": "Cost Center",
+      "options": "Cost Center",
+      "idx": 9,
+      "insert_after": "project"
     }
   ],
   "permissions": [

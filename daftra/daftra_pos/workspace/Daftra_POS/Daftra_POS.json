@@ -1,10 +1,43 @@
 {
   "doctype": "Workspace",
   "name": "Daftra POS",
+  "title": "Daftra POS",
   "module": "Daftra POS",
   "app_name": "daftra",
   "label": "Daftra POS",
   "icon": "terminal",
   "is_hidden": 0,
-  "sequence_id": 0
+  "public": 1,
+  "sequence_id": 0,
+  "content": "[{\"id\": \"daftra-pos-header\", \"type\": \"header\", \"data\": {\"text\": \"Daftra POS\"}}, {\"id\": \"daftra-pos-shortcuts\", \"type\": \"shortcut\", \"data\": {\"shortcuts\": [{\"type\": \"DocType\", \"label\": \"POS Session\", \"link_to\": \"POS Session\", \"doc_view\": \"List\", \"color\": \"Blue\"}]}}]",
+  "shortcuts": [
+    {
+      "type": "DocType",
+      "label": "POS Session",
+      "link_to": "POS Session",
+      "doc_view": "List",
+      "color": "Blue"
+    }
+  ],
+  "links": [
+    {
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "POS",
+      "link_count": 1,
+      "onboard": 0,
+      "type": "Card Break"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "POS Session",
+      "link_count": 0,
+      "link_to": "POS Session",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    }
+  ]
 }

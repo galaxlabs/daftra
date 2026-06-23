@@ -1,10 +1,187 @@
 {
   "doctype": "Workspace",
   "name": "Daftra Clients",
+  "title": "Daftra Clients",
   "module": "Daftra Clients",
   "app_name": "daftra",
   "label": "Daftra Clients",
   "icon": "organization",
   "is_hidden": 0,
-  "sequence_id": 0
+  "public": 1,
+  "sequence_id": 0,
+  "content": "[{\"id\": \"daftra-clients-header\", \"type\": \"header\", \"data\": {\"text\": \"Daftra Clients\"}}, {\"id\": \"daftra-clients-shortcuts\", \"type\": \"shortcut\", \"data\": {\"shortcuts\": [{\"type\": \"DocType\", \"label\": \"Client\", \"link_to\": \"Client\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Client Contact\", \"link_to\": \"Client Contact\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Appointment\", \"link_to\": \"Appointment\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"CRM Deal\", \"link_to\": \"CRM Deal\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Credit Charge\", \"link_to\": \"Credit Charge\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Credit Usage\", \"link_to\": \"Credit Usage\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Insurance Agent\", \"link_to\": \"Insurance Agent\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Credit Package\", \"link_to\": \"Credit Package\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Credit Type\", \"link_to\": \"Credit Type\", \"doc_view\": \"List\", \"color\": \"Blue\"}]}}]",
+  "shortcuts": [
+    {
+      "type": "DocType",
+      "label": "Client",
+      "link_to": "Client",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Client Contact",
+      "link_to": "Client Contact",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Appointment",
+      "link_to": "Appointment",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "CRM Deal",
+      "link_to": "CRM Deal",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Credit Charge",
+      "link_to": "Credit Charge",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Credit Usage",
+      "link_to": "Credit Usage",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Insurance Agent",
+      "link_to": "Insurance Agent",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Credit Package",
+      "link_to": "Credit Package",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Credit Type",
+      "link_to": "Credit Type",
+      "doc_view": "List",
+      "color": "Blue"
+    }
+  ],
+  "links": [
+    {
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Client Management",
+      "link_count": 9,
+      "onboard": 0,
+      "type": "Card Break"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Client",
+      "link_count": 0,
+      "link_to": "Client",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Client Contact",
+      "link_count": 0,
+      "link_to": "Client Contact",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Appointment",
+      "link_count": 0,
+      "link_to": "Appointment",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "CRM Deal",
+      "link_count": 0,
+      "link_to": "CRM Deal",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Credit Charge",
+      "link_count": 0,
+      "link_to": "Credit Charge",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Credit Usage",
+      "link_count": 0,
+      "link_to": "Credit Usage",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Insurance Agent",
+      "link_count": 0,
+      "link_to": "Insurance Agent",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Credit Package",
+      "link_count": 0,
+      "link_to": "Credit Package",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Credit Type",
+      "link_count": 0,
+      "link_to": "Credit Type",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    }
+  ]
 }

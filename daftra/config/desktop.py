@@ -83,6 +83,14 @@ def get_data():
             "_category": "Settings",
         },
         {
+            "module_name": "Daftra Projects",
+            "color": "#34495e",
+            "icon": "octicon octicon-briefcase",
+            "type": "module",
+            "label": _("Projects"),
+            "_category": "Operations",
+        },
+        {
             "module_name": "Daftra Settings",
             "color": "#7f8c8d",
             "icon": "octicon octicon-settings",

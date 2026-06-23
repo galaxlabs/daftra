@@ -1,0 +1,75 @@
+{
+  "doctype": "DocType",
+  "name": "Credit Type",
+  "module": "Daftra Clients",
+  "custom": 0,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "istable": 0,
+  "track_changes": true,
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "actions": [],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "idx": 0,
+      "options": "CTY-.YYYY.-",
+      "reqd": true,
+      "insert_after": null
+    },
+    {
+      "fieldname": "type_name",
+      "fieldtype": "Data",
+      "label": "Type Name",
+      "idx": 1,
+      "reqd": true,
+      "insert_after": null
+    },
+    {
+      "fieldname": "unit_label",
+      "fieldtype": "Data",
+      "label": "Unit Label",
+      "idx": 2,
+      "insert_after": "type_name"
+    },
+    {
+      "fieldname": "default_credits",
+      "fieldtype": "Int",
+      "label": "Default Credits",
+      "idx": 3,
+      "insert_after": "unit_label"
+    },
+    {
+      "fieldname": "active",
+      "fieldtype": "Check",
+      "label": "Active",
+      "idx": 4,
+      "default": "1",
+      "insert_after": "default_credits"
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Small Text",
+      "label": "Description",
+      "idx": 5,
+      "insert_after": "active"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_seen": 1,
+  "title_field": "type_name",
+  "quick_entry": false
+}

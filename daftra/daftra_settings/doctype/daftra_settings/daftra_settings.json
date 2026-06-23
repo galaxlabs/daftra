@@ -110,11 +110,40 @@
       "options": "PKR\nSAR\nAED\nUSD\nEUR\nGBP"
     },
     {
+      "fieldname": "business_type",
+      "fieldtype": "Select",
+      "label": "Business Type",
+      "reqd": false,
+      "idx": 12,
+      "insert_after": "company_name",
+      "options": "Services\nTrading\nRetail\nWholesale\nMixed",
+      "default": "Services"
+    },
+    {
+      "fieldname": "default_language",
+      "fieldtype": "Select",
+      "label": "Default Language",
+      "reqd": false,
+      "idx": 13,
+      "insert_after": "business_type",
+      "options": "English\nArabic",
+      "default": "English"
+    },
+    {
+      "fieldname": "frontend_setup_completed",
+      "fieldtype": "Check",
+      "label": "Frontend Setup Completed",
+      "reqd": false,
+      "idx": 14,
+      "insert_after": "default_language",
+      "default": 0
+    },
+    {
       "fieldname": "company_name",
       "fieldtype": "Data",
       "label": "Company Name",
       "reqd": false,
-      "idx": 12,
+      "idx": 15,
       "insert_after": "default_currency"
     },
     {
@@ -122,7 +151,7 @@
       "fieldtype": "Attach",
       "label": "Company Logo",
       "reqd": false,
-      "idx": 13,
+      "idx": 16,
       "insert_after": "company_name"
     },
     {
@@ -130,7 +159,7 @@
       "fieldtype": "Data",
       "label": "VAT Number",
       "reqd": false,
-      "idx": 14,
+      "idx": 17,
       "insert_after": "company_logo"
     },
     {
@@ -138,7 +167,7 @@
       "fieldtype": "Data",
       "label": "CR Number",
       "reqd": false,
-      "idx": 15,
+      "idx": 18,
       "insert_after": "vat_number"
     },
     {
@@ -146,7 +175,7 @@
       "fieldtype": "Check",
       "label": "Enable ZATCA Compliance",
       "reqd": false,
-      "idx": 16,
+      "idx": 19,
       "insert_after": "cr_number"
     },
     {
@@ -154,7 +183,7 @@
       "fieldtype": "Link",
       "label": "Default Sales Tax",
       "reqd": false,
-      "idx": 17,
+      "idx": 20,
       "insert_after": "enable_zatca",
       "options": "Tax Setting"
     },
@@ -163,7 +192,7 @@
       "fieldtype": "Link",
       "label": "Default Purchase Tax",
       "reqd": false,
-      "idx": 18,
+      "idx": 21,
       "insert_after": "default_sales_tax",
       "options": "Tax Setting"
     }

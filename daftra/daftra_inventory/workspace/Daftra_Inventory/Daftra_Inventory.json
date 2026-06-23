@@ -1,10 +1,169 @@
 {
   "doctype": "Workspace",
   "name": "Daftra Inventory",
+  "title": "Daftra Inventory",
   "module": "Daftra Inventory",
   "app_name": "daftra",
   "label": "Daftra Inventory",
   "icon": "package",
   "is_hidden": 0,
-  "sequence_id": 0
+  "public": 1,
+  "sequence_id": 0,
+  "content": "[{\"id\": \"daftra-inventory-header\", \"type\": \"header\", \"data\": {\"text\": \"Daftra Inventory\"}}, {\"id\": \"daftra-inventory-shortcuts\", \"type\": \"shortcut\", \"data\": {\"shortcuts\": [{\"type\": \"DocType\", \"label\": \"Product\", \"link_to\": \"Product\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Warehouse\", \"link_to\": \"Warehouse\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Stock Entry\", \"link_to\": \"Stock Entry\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Stock Entry Item\", \"link_to\": \"Stock Entry Item\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Stocktaking\", \"link_to\": \"Stocktaking\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Price List\", \"link_to\": \"Price List\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Price List Rule\", \"link_to\": \"Price List Rule\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Requisition\", \"link_to\": \"Requisition\", \"doc_view\": \"List\", \"color\": \"Blue\"}]}}]",
+  "shortcuts": [
+    {
+      "type": "DocType",
+      "label": "Product",
+      "link_to": "Product",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Warehouse",
+      "link_to": "Warehouse",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Stock Entry",
+      "link_to": "Stock Entry",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Stock Entry Item",
+      "link_to": "Stock Entry Item",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Stocktaking",
+      "link_to": "Stocktaking",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Price List",
+      "link_to": "Price List",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Price List Rule",
+      "link_to": "Price List Rule",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Requisition",
+      "link_to": "Requisition",
+      "doc_view": "List",
+      "color": "Blue"
+    }
+  ],
+  "links": [
+    {
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Inventory Control",
+      "link_count": 8,
+      "onboard": 0,
+      "type": "Card Break"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Product",
+      "link_count": 0,
+      "link_to": "Product",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Warehouse",
+      "link_count": 0,
+      "link_to": "Warehouse",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Stock Entry",
+      "link_count": 0,
+      "link_to": "Stock Entry",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Stock Entry Item",
+      "link_count": 0,
+      "link_to": "Stock Entry Item",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Stocktaking",
+      "link_count": 0,
+      "link_to": "Stocktaking",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Price List",
+      "link_count": 0,
+      "link_to": "Price List",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Price List Rule",
+      "link_count": 0,
+      "link_to": "Price List Rule",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Requisition",
+      "link_count": 0,
+      "link_to": "Requisition",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    }
+  ]
 }

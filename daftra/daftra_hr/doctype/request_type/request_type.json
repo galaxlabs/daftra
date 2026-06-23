@@ -1,0 +1,77 @@
+{
+  "doctype": "DocType",
+  "name": "Request Type",
+  "module": "Daftra HR",
+  "custom": 0,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "istable": 0,
+  "track_changes": true,
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "actions": [],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "idx": 0,
+      "options": "RQT-.YYYY.-",
+      "reqd": true,
+      "insert_after": null
+    },
+    {
+      "fieldname": "request_name",
+      "fieldtype": "Data",
+      "label": "Request Name",
+      "idx": 1,
+      "reqd": true,
+      "insert_after": null
+    },
+    {
+      "fieldname": "category",
+      "fieldtype": "Select",
+      "label": "Category",
+      "idx": 2,
+      "options": "Leave\nDocument\nPayroll\nShift\nGeneral",
+      "insert_after": "request_name"
+    },
+    {
+      "fieldname": "requires_approval",
+      "fieldtype": "Check",
+      "label": "Requires Approval",
+      "idx": 3,
+      "default": "1",
+      "insert_after": "category"
+    },
+    {
+      "fieldname": "active",
+      "fieldtype": "Check",
+      "label": "Active",
+      "idx": 4,
+      "default": "1",
+      "insert_after": "requires_approval"
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Small Text",
+      "label": "Description",
+      "idx": 5,
+      "insert_after": "active"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_seen": 1,
+  "title_field": "request_name",
+  "quick_entry": false
+}

@@ -1,3 +1,5 @@
+import json
+
 import frappe
 from frappe import _
 
@@ -14,7 +16,52 @@ MODULE_FIELDS = {
     "Tax": "enable_tax_module",
 }
 
-@frappe.whitelist()
+SETUP_FIELDS = [
+    "business_type",
+    "default_language",
+    "frontend_setup_completed",
+    "company_name",
+    "default_currency",
+    "company_logo",
+    "vat_number",
+    "cr_number",
+    "enable_zatca",
+]
+
+BUSINESS_TYPES = [
+    {"value": "Services", "label": _("Services")},
+    {"value": "Trading", "label": _("Trading")},
+    {"value": "Retail", "label": _("Retail")},
+    {"value": "Wholesale", "label": _("Wholesale")},
+    {"value": "Mixed", "label": _("Mixed")},
+]
+
+DOCUMENT_CATALOG = {
+    "Sales": ["Sales Invoice", "Sales Quotation", "Invoice Payment", "Recurring Invoice", "Installment Agreement", "Sales Commission"],
+    "Clients": ["Client", "Client Contact", "Appointment", "CRM Deal", "Credit Charge", "Credit Usage", "Insurance Agent"],
+    "Inventory": ["Product", "Warehouse", "Stock Entry", "Stocktaking", "Price List", "Price List Rule"],
+    "Purchases": ["Supplier", "Purchase Request", "Purchase Quotation", "Purchase Order", "Purchase Invoice", "Supplier Payment"],
+    "Accounting": ["Account", "Cost Center", "Journal Entry", "Expense", "Income", "Treasury", "Asset"],
+    "HR": ["Employee", "Employee Role", "Shift", "Employee Attendance", "Employee Contract", "Payroll Entry", "Leave Request"],
+    "POS": ["POS Session"],
+    "Bookings": ["Booking"],
+    "Time Tracking": ["Time Entry"],
+    "Tax": ["Tax Setting"],
+    "Settings": ["Daftra Settings"],
+}
+
+PRINT_TEMPLATE_MATRIX = {
+    "Sales Invoice": ["Default Invoice", "TAX Invoice", "Receipt", "Materials & Services"],
+    "Sales Quotation": ["Quotation"],
+    "Purchase Order": ["Purchase Order"],
+    "Purchase Invoice": ["Default Invoice", "TAX Invoice"],
+    "Invoice Payment": ["Receipt"],
+    "Supplier Payment": ["Receipt"],
+    "Time Entry": ["Timesheet"],
+    "Booking": ["Quotation"],
+}
+
+
 def get_module_status(module_name):
     """Check if a Daftra module is enabled."""
     settings = frappe.get_single("Daftra Settings")
@@ -23,11 +70,45 @@ def get_module_status(module_name):
         field = "enable_" + frappe.scrub(module_name).replace("daftra_", "") + "_module"
     return getattr(settings, field, 1)
 
-@frappe.whitelist()
+
 def get_enabled_modules():
     """Get all enabled Daftra modules."""
     settings = frappe.get_single("Daftra Settings")
     return {module: getattr(settings, field, 1) for module, field in MODULE_FIELDS.items()}
+
+
+def get_setup_state():
+    settings = frappe.get_single("Daftra Settings")
+    return {
+        field: getattr(settings, field, None) for field in SETUP_FIELDS
+    } | {
+        "business_types": BUSINESS_TYPES,
+        "languages": [
+            {"value": "en", "label": _("English")},
+            {"value": "ar", "label": _("Arabic")},
+        ],
+        "currencies": ["SAR", "AED", "USD", "EUR", "GBP", "PKR"],
+    }
+
+
+@frappe.whitelist()
+def save_frontend_setup(payload=None):
+    settings = frappe.get_single("Daftra Settings")
+    if isinstance(payload, str):
+        payload = json.loads(payload or "{}")
+    payload = payload or {}
+    business_type = payload.get("business_type") or "Services"
+    if business_type not in {item["value"] for item in BUSINESS_TYPES}:
+        frappe.throw(_("Unsupported business type"))
+    for field in SETUP_FIELDS:
+        if field in payload and payload[field] is not None:
+            setattr(settings, field, payload[field])
+    settings.business_type = business_type
+    settings.frontend_setup_completed = 1
+    settings.save(ignore_permissions=True)
+    frappe.db.commit()
+    return get_setup_state()
+
 
 @frappe.whitelist()
 def get_dashboard_stats():
@@ -45,6 +126,9 @@ def get_dashboard_stats():
             FROM `tabSales Invoice`
             WHERE docstatus = 1 AND invoice_date >= DATE_SUB(CURDATE(), INTERVAL 7 DAY)
         """)[0][0] or 0
+        stats["total_recurring_invoices"] = frappe.db.count("Recurring Invoice")
+        stats["total_installments"] = frappe.db.count("Installment Agreement")
+        stats["total_commissions"] = frappe.db.count("Sales Commission")
 
     if get_module_status("Clients"):
         stats["total_clients"] = frappe.db.count("Client")
@@ -67,4 +151,25 @@ def get_dashboard_stats():
         stats["total_expenses"] = frappe.db.sql("SELECT COALESCE(SUM(amount),0) FROM `tabExpense`")[0][0] or 0
         stats["total_incomes"] = frappe.db.sql("SELECT COALESCE(SUM(amount),0) FROM `tabIncome`")[0][0] or 0
 
+    if get_module_status("Bookings"):
+        stats["total_bookings"] = frappe.db.count("Booking")
+
+    if get_module_status("Time Tracking"):
+        stats["total_time_entries"] = frappe.db.count("Time Entry")
+
     return stats
+
+
+@frappe.whitelist()
+def get_document_catalog():
+    catalog = []
+    for module, doctypes in DOCUMENT_CATALOG.items():
+        for doctype in doctypes:
+            catalog.append({
+                "module": module,
+                "doctype": doctype,
+                "route": doctype.lower().replace(" ", "-"),
+                "templates": PRINT_TEMPLATE_MATRIX.get(doctype, []),
+                "has_print": bool(PRINT_TEMPLATE_MATRIX.get(doctype)),
+            })
+    return catalog

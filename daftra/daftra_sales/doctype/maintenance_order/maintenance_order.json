@@ -1,0 +1,117 @@
+{
+  "doctype": "DocType",
+  "name": "Maintenance Order",
+  "module": "Daftra Sales",
+  "custom": 0,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "istable": 0,
+  "track_changes": true,
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "actions": [],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "idx": 0,
+      "options": "MNT-.YYYY.-",
+      "reqd": true,
+      "insert_after": null
+    },
+    {
+      "fieldname": "client",
+      "fieldtype": "Link",
+      "label": "Client",
+      "idx": 1,
+      "reqd": true,
+      "options": "Client",
+      "insert_after": null
+    },
+    {
+      "fieldname": "project",
+      "fieldtype": "Link",
+      "label": "Project",
+      "idx": 2,
+      "options": "Daftra Project",
+      "insert_after": "client"
+    },
+    {
+      "fieldname": "request_date",
+      "fieldtype": "Date",
+      "label": "Request Date",
+      "idx": 3,
+      "reqd": true,
+      "insert_after": "project"
+    },
+    {
+      "fieldname": "scheduled_date",
+      "fieldtype": "Datetime",
+      "label": "Scheduled Date",
+      "idx": 4,
+      "insert_after": "request_date"
+    },
+    {
+      "fieldname": "priority",
+      "fieldtype": "Select",
+      "label": "Priority",
+      "idx": 5,
+      "options": "Low\nMedium\nHigh\nUrgent",
+      "insert_after": "scheduled_date"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "idx": 6,
+      "options": "Draft\nOpen\nAssigned\nIn Progress\nCompleted\nClosed\nCancelled",
+      "default": "Draft",
+      "insert_after": "priority"
+    },
+    {
+      "fieldname": "service_location",
+      "fieldtype": "Data",
+      "label": "Service Location",
+      "idx": 7,
+      "insert_after": "status"
+    },
+    {
+      "fieldname": "assigned_to",
+      "fieldtype": "Link",
+      "label": "Assigned To",
+      "idx": 8,
+      "options": "User",
+      "insert_after": "service_location"
+    },
+    {
+      "fieldname": "cost_center",
+      "fieldtype": "Link",
+      "label": "Cost Center",
+      "idx": 9,
+      "options": "Cost Center",
+      "insert_after": "assigned_to"
+    },
+    {
+      "fieldname": "problem_description",
+      "fieldtype": "Small Text",
+      "label": "Problem Description",
+      "idx": 10,
+      "insert_after": "cost_center"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_seen": 1,
+  "title_field": "client",
+  "quick_entry": false
+}

@@ -1,0 +1,91 @@
+{
+  "doctype": "DocType",
+  "name": "Commission Rule",
+  "module": "Daftra Sales",
+  "custom": 0,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "istable": 0,
+  "track_changes": true,
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "actions": [],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "idx": 0,
+      "options": "CMR-.YYYY.-",
+      "reqd": true,
+      "insert_after": null
+    },
+    {
+      "fieldname": "rule_name",
+      "fieldtype": "Data",
+      "label": "Rule Name",
+      "idx": 1,
+      "reqd": true,
+      "insert_after": null
+    },
+    {
+      "fieldname": "sales_person",
+      "fieldtype": "Link",
+      "label": "Sales Person",
+      "idx": 2,
+      "options": "User",
+      "insert_after": "rule_name"
+    },
+    {
+      "fieldname": "basis",
+      "fieldtype": "Select",
+      "label": "Commission Basis",
+      "idx": 3,
+      "options": "Invoice Total\nProfit\nProduct\nService Type",
+      "insert_after": "sales_person"
+    },
+    {
+      "fieldname": "commission_rate",
+      "fieldtype": "Percent",
+      "label": "Commission Rate",
+      "idx": 4,
+      "insert_after": "basis"
+    },
+    {
+      "fieldname": "starts_on",
+      "fieldtype": "Date",
+      "label": "Starts On",
+      "idx": 5,
+      "insert_after": "commission_rate"
+    },
+    {
+      "fieldname": "ends_on",
+      "fieldtype": "Date",
+      "label": "Ends On",
+      "idx": 6,
+      "insert_after": "starts_on"
+    },
+    {
+      "fieldname": "enabled",
+      "fieldtype": "Check",
+      "label": "Enabled",
+      "idx": 7,
+      "default": "1",
+      "insert_after": "ends_on"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_seen": 1,
+  "title_field": "rule_name",
+  "quick_entry": false
+}

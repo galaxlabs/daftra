@@ -1,10 +1,130 @@
 {
   "doctype": "Workspace",
   "name": "Daftra Settings",
+  "title": "Daftra Settings",
   "module": "Daftra Settings",
   "app_name": "daftra",
   "label": "Daftra Settings",
   "icon": "settings",
   "is_hidden": 0,
-  "sequence_id": 0
+  "public": 1,
+  "sequence_id": 0,
+  "content": "[{\"id\": \"daftra-settings-header\", \"type\": \"header\", \"data\": {\"text\": \"Daftra Settings\"}}, {\"id\": \"daftra-settings-shortcuts\", \"type\": \"shortcut\", \"data\": {\"shortcuts\": [{\"type\": \"DocType\", \"label\": \"Daftra Settings\", \"link_to\": \"Daftra Settings\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Print Format\", \"link_to\": \"Print Format\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"User\", \"link_to\": \"User\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Role\", \"link_to\": \"Role\", \"doc_view\": \"List\", \"color\": \"Blue\"}]}}]",
+  "shortcuts": [
+    {
+      "type": "DocType",
+      "label": "Daftra Settings",
+      "link_to": "Daftra Settings",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Print Format",
+      "link_to": "Print Format",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "User",
+      "link_to": "User",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Role",
+      "link_to": "Role",
+      "doc_view": "List",
+      "color": "Blue"
+    }
+  ],
+  "links": [
+    {
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "System Settings",
+      "link_count": 7,
+      "onboard": 0,
+      "type": "Card Break"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Daftra Settings",
+      "link_count": 0,
+      "link_to": "Daftra Settings",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Workflow",
+      "link_count": 0,
+      "link_to": "Workflow",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Workflow State",
+      "link_count": 0,
+      "link_to": "Workflow State",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Module Def",
+      "link_count": 0,
+      "link_to": "Module Def",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Print Format",
+      "link_count": 0,
+      "link_to": "Print Format",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "User",
+      "link_count": 0,
+      "link_to": "User",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Role",
+      "link_count": 0,
+      "link_to": "Role",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    }
+  ]
 }

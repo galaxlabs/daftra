@@ -39,18 +39,28 @@
     },
     {
       "fieldname": "credit_type",
-      "fieldtype": "Data",
+      "fieldtype": "Link",
       "label": "Credit Type",
       "reqd": false,
       "idx": 3,
-      "insert_after": "amount"
+      "insert_after": "amount",
+      "options": "Credit Type"
+    },
+    {
+      "fieldname": "credit_package",
+      "fieldtype": "Link",
+      "label": "Credit Package",
+      "reqd": false,
+      "idx": 4,
+      "insert_after": "credit_type",
+      "options": "Credit Package"
     },
     {
       "fieldname": "notes",
       "fieldtype": "Text",
       "label": "Notes",
       "reqd": false,
-      "idx": 4,
+      "idx": 5,
       "insert_after": "credit_type"
     }
   ],

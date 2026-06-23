@@ -1,10 +1,43 @@
 {
   "doctype": "Workspace",
   "name": "Daftra Bookings",
+  "title": "Daftra Bookings",
   "module": "Daftra Bookings",
   "app_name": "daftra",
   "label": "Daftra Bookings",
   "icon": "calendar",
   "is_hidden": 0,
-  "sequence_id": 0
+  "public": 1,
+  "sequence_id": 0,
+  "content": "[{\"id\": \"daftra-bookings-header\", \"type\": \"header\", \"data\": {\"text\": \"Daftra Bookings\"}}, {\"id\": \"daftra-bookings-shortcuts\", \"type\": \"shortcut\", \"data\": {\"shortcuts\": [{\"type\": \"DocType\", \"label\": \"Booking\", \"link_to\": \"Booking\", \"doc_view\": \"List\", \"color\": \"Blue\"}]}}]",
+  "shortcuts": [
+    {
+      "type": "DocType",
+      "label": "Booking",
+      "link_to": "Booking",
+      "doc_view": "List",
+      "color": "Blue"
+    }
+  ],
+  "links": [
+    {
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Bookings",
+      "link_count": 1,
+      "onboard": 0,
+      "type": "Card Break"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Booking",
+      "link_count": 0,
+      "link_to": "Booking",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    }
+  ]
 }

@@ -109,6 +109,36 @@
       "reqd": false,
       "idx": 11,
       "insert_after": "is_billed"
+    },
+    {
+      "fieldname": "project",
+      "fieldtype": "Link",
+      "label": "Project",
+      "options": "Daftra Project",
+      "idx": 12,
+      "insert_after": "notes"
+    },
+    {
+      "fieldname": "cost_center",
+      "fieldtype": "Link",
+      "label": "Cost Center",
+      "options": "Cost Center",
+      "idx": 13,
+      "insert_after": "project"
+    },
+    {
+      "fieldname": "cost_rate",
+      "fieldtype": "Currency",
+      "label": "Cost Rate",
+      "idx": 14,
+      "insert_after": "cost_center"
+    },
+    {
+      "fieldname": "cost_amount",
+      "fieldtype": "Currency",
+      "label": "Cost Amount",
+      "idx": 15,
+      "insert_after": "cost_rate"
     }
   ],
   "permissions": [

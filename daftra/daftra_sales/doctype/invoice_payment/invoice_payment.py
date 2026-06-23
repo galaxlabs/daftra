@@ -16,7 +16,10 @@ class InvoicePayment(Document):
     def on_submit(self):
         if self.sales_invoice:
             invoice = frappe.get_doc("Sales Invoice", self.sales_invoice)
-            invoice.paid_amount = flt(invoice.paid_amount) + flt(self.amount)
-            invoice.balance = flt(invoice.total) - flt(invoice.paid_amount)
-            invoice.status = "Paid" if invoice.balance <= 0 else "Submitted"
-            invoice.save(ignore_permissions=True)
+            paid_amount = flt(invoice.paid_amount) + flt(self.amount)
+            balance = flt(invoice.total) - paid_amount
+            frappe.db.set_value("Sales Invoice", invoice.name, {
+                "paid_amount": paid_amount,
+                "balance": balance,
+                "status": "Paid" if balance <= 0 else "Submitted",
+            }, update_modified=True)

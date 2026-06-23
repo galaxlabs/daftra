@@ -1,0 +1,90 @@
+{
+  "doctype": "DocType",
+  "name": "Credit Package",
+  "module": "Daftra Clients",
+  "custom": 0,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "istable": 0,
+  "track_changes": true,
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "actions": [],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "idx": 0,
+      "options": "CPK-.YYYY.-",
+      "reqd": true,
+      "insert_after": null
+    },
+    {
+      "fieldname": "package_name",
+      "fieldtype": "Data",
+      "label": "Package Name",
+      "idx": 1,
+      "reqd": true,
+      "insert_after": null
+    },
+    {
+      "fieldname": "credit_type",
+      "fieldtype": "Link",
+      "label": "Credit Type",
+      "idx": 2,
+      "options": "Credit Type",
+      "insert_after": "package_name"
+    },
+    {
+      "fieldname": "credits",
+      "fieldtype": "Int",
+      "label": "Credits",
+      "idx": 3,
+      "insert_after": "credit_type"
+    },
+    {
+      "fieldname": "price",
+      "fieldtype": "Currency",
+      "label": "Price",
+      "idx": 4,
+      "insert_after": "credits"
+    },
+    {
+      "fieldname": "validity_days",
+      "fieldtype": "Int",
+      "label": "Validity Days",
+      "idx": 5,
+      "insert_after": "price"
+    },
+    {
+      "fieldname": "active",
+      "fieldtype": "Check",
+      "label": "Active",
+      "idx": 6,
+      "default": "1",
+      "insert_after": "validity_days"
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Small Text",
+      "label": "Description",
+      "idx": 7,
+      "insert_after": "active"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_seen": 1,
+  "title_field": "package_name",
+  "quick_entry": false
+}

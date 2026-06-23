@@ -230,6 +230,57 @@
       "options": "Sales Invoice Item",
       "insert_after": "work_ordered_by",
       "idx": 25
+    },
+    {
+      "fieldname": "project_title",
+      "fieldtype": "Data",
+      "label": "Project Title",
+      "insert_after": "work_ordered_by",
+      "idx": 24
+    },
+    {
+      "fieldname": "project_reference",
+      "fieldtype": "Data",
+      "label": "Project Reference",
+      "insert_after": "project_title",
+      "idx": 25
+    },
+    {
+      "fieldname": "project_location",
+      "fieldtype": "Data",
+      "label": "Project Location",
+      "insert_after": "project_reference",
+      "idx": 26
+    },
+    {
+      "fieldname": "project_scope",
+      "fieldtype": "Small Text",
+      "label": "Project Scope",
+      "insert_after": "project_location",
+      "idx": 27
+    },
+    {
+      "fieldname": "contract_acknowledgement",
+      "fieldtype": "Small Text",
+      "label": "Contractor Acknowledgement",
+      "insert_after": "project_scope",
+      "idx": 28
+    },
+    {
+      "fieldname": "project",
+      "fieldtype": "Link",
+      "label": "Project",
+      "options": "Daftra Project",
+      "idx": 24,
+      "insert_after": "work_ordered_by"
+    },
+    {
+      "fieldname": "cost_center",
+      "fieldtype": "Link",
+      "label": "Cost Center",
+      "options": "Cost Center",
+      "idx": 26,
+      "insert_after": "project"
     }
   ],
   "permissions": [

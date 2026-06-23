@@ -1,10 +1,205 @@
 {
   "doctype": "Workspace",
   "name": "Daftra Sales",
+  "title": "Daftra Sales",
   "module": "Daftra Sales",
   "app_name": "daftra",
   "label": "Daftra Sales",
   "icon": "receipt",
   "is_hidden": 0,
-  "sequence_id": 0
+  "public": 1,
+  "sequence_id": 0,
+  "content": "[{\"id\": \"daftra-sales-header\", \"type\": \"header\", \"data\": {\"text\": \"Daftra Sales\"}}, {\"id\": \"daftra-sales-shortcuts\", \"type\": \"shortcut\", \"data\": {\"shortcuts\": [{\"type\": \"DocType\", \"label\": \"Sales Invoice\", \"link_to\": \"Sales Invoice\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Sales Invoice Item\", \"link_to\": \"Sales Invoice Item\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Sales Quotation\", \"link_to\": \"Sales Quotation\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Sales Quotation Item\", \"link_to\": \"Sales Quotation Item\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Invoice Payment\", \"link_to\": \"Invoice Payment\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Recurring Invoice\", \"link_to\": \"Recurring Invoice\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Installment Agreement\", \"link_to\": \"Installment Agreement\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Sales Commission\", \"link_to\": \"Sales Commission\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Commission Rule\", \"link_to\": \"Commission Rule\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Maintenance Order\", \"link_to\": \"Maintenance Order\", \"doc_view\": \"List\", \"color\": \"Blue\"}]}}]",
+  "shortcuts": [
+    {
+      "type": "DocType",
+      "label": "Sales Invoice",
+      "link_to": "Sales Invoice",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Sales Invoice Item",
+      "link_to": "Sales Invoice Item",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Sales Quotation",
+      "link_to": "Sales Quotation",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Sales Quotation Item",
+      "link_to": "Sales Quotation Item",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Invoice Payment",
+      "link_to": "Invoice Payment",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Recurring Invoice",
+      "link_to": "Recurring Invoice",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Installment Agreement",
+      "link_to": "Installment Agreement",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Sales Commission",
+      "link_to": "Sales Commission",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Commission Rule",
+      "link_to": "Commission Rule",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Maintenance Order",
+      "link_to": "Maintenance Order",
+      "doc_view": "List",
+      "color": "Blue"
+    }
+  ],
+  "links": [
+    {
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Sales Documents",
+      "link_count": 10,
+      "onboard": 0,
+      "type": "Card Break"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Sales Invoice",
+      "link_count": 0,
+      "link_to": "Sales Invoice",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Sales Invoice Item",
+      "link_count": 0,
+      "link_to": "Sales Invoice Item",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Sales Quotation",
+      "link_count": 0,
+      "link_to": "Sales Quotation",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Sales Quotation Item",
+      "link_count": 0,
+      "link_to": "Sales Quotation Item",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Invoice Payment",
+      "link_count": 0,
+      "link_to": "Invoice Payment",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Recurring Invoice",
+      "link_count": 0,
+      "link_to": "Recurring Invoice",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Installment Agreement",
+      "link_count": 0,
+      "link_to": "Installment Agreement",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Sales Commission",
+      "link_count": 0,
+      "link_to": "Sales Commission",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Commission Rule",
+      "link_count": 0,
+      "link_to": "Commission Rule",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Maintenance Order",
+      "link_count": 0,
+      "link_to": "Maintenance Order",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    }
+  ]
 }

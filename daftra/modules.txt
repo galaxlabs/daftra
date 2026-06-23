@@ -9,3 +9,4 @@ Daftra Bookings
 Daftra Time Tracking
 Daftra Tax
 Daftra Settings
+Daftra Projects

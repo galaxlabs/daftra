@@ -1,6 +1,0 @@
-{
-  "doctype": "Custom Script",
-  "dt": "Daftra Settings",
-  "script": "\nfrappe.ui.form.on('Daftra Settings', {\n    refresh: function(frm) {\n        // Show module status\n        var modules = [\n            'Sales', 'Clients', 'Inventory', 'Purchases', \n            'Accounting', 'HR', 'POS', 'Bookings', \n            'Time Tracking', 'Tax'\n        ];\n        modules.forEach(function(mod) {\n            var field = 'enable_' + mod.toLowerCase() + '_module';\n            var enabled = frm.doc[field];\n            frm.set_df_property(field, 'description', \n                enabled ? 'Module is ACTIVE' : 'Module is DISABLED');\n        });\n    }\n});\n",
-  "script_type": "Client"
-}

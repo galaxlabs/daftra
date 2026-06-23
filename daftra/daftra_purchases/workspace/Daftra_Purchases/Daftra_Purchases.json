@@ -1,10 +1,151 @@
 {
   "doctype": "Workspace",
   "name": "Daftra Purchases",
+  "title": "Daftra Purchases",
   "module": "Daftra Purchases",
   "app_name": "daftra",
   "label": "Daftra Purchases",
   "icon": "repo-pull",
   "is_hidden": 0,
-  "sequence_id": 0
+  "public": 1,
+  "sequence_id": 0,
+  "content": "[{\"id\": \"daftra-purchases-header\", \"type\": \"header\", \"data\": {\"text\": \"Daftra Purchases\"}}, {\"id\": \"daftra-purchases-shortcuts\", \"type\": \"shortcut\", \"data\": {\"shortcuts\": [{\"type\": \"DocType\", \"label\": \"Supplier\", \"link_to\": \"Supplier\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Purchase Request\", \"link_to\": \"Purchase Request\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Purchase Quotation\", \"link_to\": \"Purchase Quotation\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Purchase Order\", \"link_to\": \"Purchase Order\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Purchase Invoice\", \"link_to\": \"Purchase Invoice\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Purchase Invoice Item\", \"link_to\": \"Purchase Invoice Item\", \"doc_view\": \"List\", \"color\": \"Blue\"}, {\"type\": \"DocType\", \"label\": \"Supplier Payment\", \"link_to\": \"Supplier Payment\", \"doc_view\": \"List\", \"color\": \"Blue\"}]}}]",
+  "shortcuts": [
+    {
+      "type": "DocType",
+      "label": "Supplier",
+      "link_to": "Supplier",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Purchase Request",
+      "link_to": "Purchase Request",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Purchase Quotation",
+      "link_to": "Purchase Quotation",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Purchase Order",
+      "link_to": "Purchase Order",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Purchase Invoice",
+      "link_to": "Purchase Invoice",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Purchase Invoice Item",
+      "link_to": "Purchase Invoice Item",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "label": "Supplier Payment",
+      "link_to": "Supplier Payment",
+      "doc_view": "List",
+      "color": "Blue"
+    }
+  ],
+  "links": [
+    {
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Procurement",
+      "link_count": 7,
+      "onboard": 0,
+      "type": "Card Break"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Supplier",
+      "link_count": 0,
+      "link_to": "Supplier",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Purchase Request",
+      "link_count": 0,
+      "link_to": "Purchase Request",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Purchase Quotation",
+      "link_count": 0,
+      "link_to": "Purchase Quotation",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Purchase Order",
+      "link_count": 0,
+      "link_to": "Purchase Order",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Purchase Invoice",
+      "link_count": 0,
+      "link_to": "Purchase Invoice",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Purchase Invoice Item",
+      "link_count": 0,
+      "link_to": "Purchase Invoice Item",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Supplier Payment",
+      "link_count": 0,
+      "link_to": "Supplier Payment",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    }
+  ]
 }

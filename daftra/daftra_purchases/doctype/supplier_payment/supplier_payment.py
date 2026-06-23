@@ -12,6 +12,8 @@ class SupplierPayment(Document):
     def on_submit(self):
         if self.purchase_invoice:
             invoice = frappe.get_doc("Purchase Invoice", self.purchase_invoice)
-            invoice.paid_amount = flt(invoice.paid_amount) + flt(self.amount)
-            invoice.status = "Paid" if flt(invoice.paid_amount) >= flt(invoice.total) else "Submitted"
-            invoice.save(ignore_permissions=True)
+            paid_amount = flt(invoice.paid_amount) + flt(self.amount)
+            frappe.db.set_value("Purchase Invoice", invoice.name, {
+                "paid_amount": paid_amount,
+                "status": "Paid" if paid_amount >= flt(invoice.total) else "Submitted",
+            }, update_modified=True)
