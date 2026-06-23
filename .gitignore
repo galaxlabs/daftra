@@ -10,3 +10,10 @@ dist/
 .env.*
 !.env.example
 .DS_Store
+.pyc
+
+
+# Python bytecode and caches
+**/__pycache__/
+**/*.py[cod]
+*.pyo
