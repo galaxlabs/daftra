@@ -79,14 +79,15 @@ BUSINESS_INDUSTRIES = {
 
 DOCUMENT_CATALOG = {
     "Sales": ["Sales Invoice", "Sales Quotation", "Invoice Payment", "Recurring Invoice", "Installment Agreement", "Sales Commission"],
-    "Clients": ["Client", "Client Contact", "Appointment", "CRM Deal", "Credit Charge", "Credit Usage", "Insurance Agent"],
-    "Inventory": ["Product", "Warehouse", "Stock Entry", "Stocktaking", "Price List", "Price List Rule"],
+    "Clients": ["Client", "Client Contact", "Appointment", "CRM Deal", "Credit Charge", "Credit Usage", "Credit Package", "Credit Type", "Insurance Agent"],
+    "Inventory": ["Product", "Warehouse", "Stock Entry", "Stocktaking", "Price List", "Price List Rule", "Requisition"],
     "Purchases": ["Supplier", "Purchase Request", "Purchase Quotation", "Purchase Order", "Purchase Invoice", "Supplier Payment"],
     "Accounting": ["Account", "Cost Center", "Journal Entry", "Expense", "Income", "Treasury", "Bank Registration", "Asset"],
     "HR": ["Employee", "Employee Role", "Shift", "Employee Attendance", "Employee Contract", "Payroll Entry", "Leave Request"],
     "POS": ["POS Session"],
     "Bookings": ["Booking"],
     "Time Tracking": ["Time Entry"],
+    "Projects": ["Daftra Project"],
     "Tax": ["Tax Setting"],
     "Settings": ["Daftra Settings"],
 }
@@ -100,6 +101,7 @@ PRINT_TEMPLATE_MATRIX = {
     "Supplier Payment": ["Receipt"],
     "Time Entry": ["Timesheet"],
     "Booking": ["Quotation"],
+    "Daftra Project": [],
     "Bank Registration": [],
 }
 

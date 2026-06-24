@@ -14,7 +14,7 @@ class StockEntry(Document):
             row.amount = row.qty * row.rate
 
     def on_submit(self):
-        sign = -1 if self.entry_type == "Material Issue" else 1
+        sign = -1 if self.entry_type == "Stock Issue" else 1
         for row in self.get("items") or []:
             if row.product and frappe.db.exists("Product", row.product):
                 product = frappe.get_doc("Product", row.product)

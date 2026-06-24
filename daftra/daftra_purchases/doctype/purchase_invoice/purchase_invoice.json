@@ -132,6 +132,50 @@
       "options": "Cost Center",
       "idx": 14,
       "insert_after": "project"
+    },
+    {
+      "fieldname": "source_purchase_order",
+      "fieldtype": "Link",
+      "label": "Source Purchase Order",
+      "options": "Purchase Order",
+      "insert_after": "payment_terms_days",
+      "idx": 11
+    },
+    {
+      "fieldname": "source_purchase_quotation",
+      "fieldtype": "Link",
+      "label": "Source Purchase Quotation",
+      "options": "Purchase Quotation",
+      "insert_after": "source_purchase_order",
+      "idx": 12
+    },
+    {
+      "fieldname": "sales_quotation_reference",
+      "fieldtype": "Data",
+      "label": "Sales Quotation Reference",
+      "insert_after": "source_purchase_quotation",
+      "idx": 13
+    },
+    {
+      "fieldname": "customer_purchase_order_no",
+      "fieldtype": "Data",
+      "label": "Customer Purchase Order No",
+      "insert_after": "sales_quotation_reference",
+      "idx": 14
+    },
+    {
+      "fieldname": "supplier_invoice_no",
+      "fieldtype": "Data",
+      "label": "Supplier Invoice No",
+      "insert_after": "customer_purchase_order_no",
+      "idx": 15
+    },
+    {
+      "fieldname": "proforma_invoice_reference",
+      "fieldtype": "Data",
+      "label": "Proforma Invoice Reference",
+      "insert_after": "supplier_invoice_no",
+      "idx": 16
     }
   ],
   "permissions": [

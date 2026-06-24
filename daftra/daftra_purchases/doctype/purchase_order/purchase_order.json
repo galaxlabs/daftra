@@ -101,6 +101,42 @@
       "label": "Notes",
       "insert_after": "items",
       "idx": 10
+    },
+    {
+      "fieldname": "source_purchase_quotation",
+      "fieldtype": "Link",
+      "label": "Source Purchase Quotation",
+      "options": "Purchase Quotation",
+      "insert_after": "currency",
+      "idx": 9
+    },
+    {
+      "fieldname": "sales_quotation_reference",
+      "fieldtype": "Data",
+      "label": "Sales Quotation Reference",
+      "insert_after": "source_purchase_quotation",
+      "idx": 10
+    },
+    {
+      "fieldname": "customer_purchase_order_no",
+      "fieldtype": "Data",
+      "label": "Customer Purchase Order No",
+      "insert_after": "sales_quotation_reference",
+      "idx": 11
+    },
+    {
+      "fieldname": "supplier_quotation_no",
+      "fieldtype": "Data",
+      "label": "Supplier Quotation No",
+      "insert_after": "customer_purchase_order_no",
+      "idx": 12
+    },
+    {
+      "fieldname": "proforma_invoice_reference",
+      "fieldtype": "Data",
+      "label": "Proforma Invoice Reference",
+      "insert_after": "supplier_quotation_no",
+      "idx": 13
     }
   ],
   "permissions": [
